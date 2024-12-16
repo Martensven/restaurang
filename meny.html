@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taverna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <article>
+            <h1>Taverna</h1>         
+        </article>
+    </header>
+
+    <main>
+        <article>
+            <nav>
+                <ul id="meny">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="meny.html" class="current">Meny</a></li>
+                    <li><a href="dryck.html">Dryck</a></li>
+                    <li><a href="bestall.html">Beställ</a></li>
+                </ul>
+            </nav>
+        </article>        
+
+        <article class="dagens">
+            <h3>Tips från kocken: Dagens mat och dryck!</h3>
+            <p>(Fixa javaskript å grejer här) </p>
+        </article>
+
+        <h1>Vår Mat</h1>
+        <article id="menu"></article>
+
+        <h1>Våra drycker</h1>
+        <article id="drinkMenu"></article>
+
+        <h1>Våra efterrätter</h1>
+        <article id="desserts"></article>
+
+    </main>
+
+
+    <script src="script.js" type="module"></script>
+    <script src="db.js" type="module"></script>
+</body>
+</html>
