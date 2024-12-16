@@ -18,3 +18,4 @@ Object.values(dishes).forEach(dish => {
 
     menu.appendChild(section); // Vi använder append för att sedan lägga till section-elementen.
 });
+
