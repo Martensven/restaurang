@@ -252,7 +252,7 @@ Object.values(bbq).forEach(dish => {
 });
 
 const burgers = dbd["burgers"]; // Ändra till korrekt nyckel
-const burgerMenu = document.getElementById("bbqMenu"); // Kontrollera att elementet finns
+const burgerMenu = document.getElementById("burgerMenu"); // Kontrollera att elementet finns
 
 Object.values(burgers).forEach(dish => {
     const aside = document.createElement("aside"); // Skapa ett element för varje rätt
@@ -267,7 +267,7 @@ Object.values(burgers).forEach(dish => {
         </section>
     `; // Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
 
-    bbqMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
+    burgerMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
 });
 
 const drinks = dbd["drinks"]; // Ändra till korrekt nyckel
