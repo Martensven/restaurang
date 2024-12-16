@@ -4,7 +4,7 @@ const db = {
   "bbqs": [
     {
       "id": "ribs-brisket-and-burnt-ends",
-      "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/79619/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+      img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/79619/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
       "name": "Joe's KC BBQ",
       "dsc": "Joe's KC Ribs, Brisket & Burnt Ends",
       "price": 110.99,
@@ -1609,12 +1609,12 @@ const db = {
       "price": 99,
       "rate": 5,
       "country": "New York, NY"
-    },
-    {
-      "id": "shake-shack-shackburger-8-pack",
-      "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134862/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.png?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-      "name": "Shake Shack",
-      "dsc": "Shake Shack ShackBurger® – 8 Pack",
+},
+{
+  "id": "shake-shack-shackburger-8-pack",
+  "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134862/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.png?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+  "name": "Shake Shack",
+  "dsc": "Shake Shack ShackBurger® – 8 Pack",
       "price": 49,
       "rate": 5,
       "country": "New York, NY"
@@ -3083,24 +3083,24 @@ const db = {
       "rate": 5,
       "country": "Flavortown, USA"
     },
-    {
-      "id": "woodford-reserve-mint-julep-syrup",
-      "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134036/woodford-reserve-mint-julep-syrup.ef523ac7cbae5f4aba6b058207f490d2.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-      "name": "Woodford Reserve",
-      "dsc": "Woodford Reserve Mint Julep Syrup",
-      "price": 39,
-      "rate": 4,
-      "country": "Louisville, KY"
-    },
-    {
-      "id": "new-orleans-hurricane-mix",
-      "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/84522/new-orleans-hurricane-mix.4613584fc65cb0787024dd24d2a8f4b3.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-      "name": "Franco's Hurricane Mix",
-      "dsc": "New Orleans Hurricane Mix",
-      "price": 39,
-      "rate": 5,
-      "country": "Natchitoches, LA"
-    },
+      {
+        "id": "woodford-reserve-mint-julep-syrup",
+        "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134036/woodford-reserve-mint-julep-syrup.ef523ac7cbae5f4aba6b058207f490d2.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+        "name": "Woodford Reserve",
+        "dsc": "Woodford Reserve Mint Julep Syrup",
+        "price": 39,
+        "rate": 4,
+        "country": "Louisville, KY"
+      },
+      {
+        "id": "new-orleans-hurricane-mix",
+        "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/84522/new-orleans-hurricane-mix.4613584fc65cb0787024dd24d2a8f4b3.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+        "name": "Franco's Hurricane Mix",
+        "dsc": "New Orleans Hurricane Mix",
+        "price": 39,
+        "rate": 5,
+        "country": "Natchitoches, LA"
+      },
     {
       "id": "evan-williams-gourmet-mint-julep-mix-2-pack",
       "img": "https://goldbelly.imgix.net/uploads/product_image/image/42820/evan-williams-gourmet-mint-julep-mix-2-pack.a0bd561099dd14bfb33e3363c1c025d0.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
@@ -13145,4 +13145,4 @@ const db = {
   }
 }
 
-export default db;
+
