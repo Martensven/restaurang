@@ -13145,4 +13145,4 @@ const db = {
   }
 }
 
-console.log(db["best-foods"]);
+export default db;
