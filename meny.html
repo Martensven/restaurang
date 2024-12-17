@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taverna</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <article>
-            <img class="logo" src="src/tavernalogo.png" alt="Logga">         
+            <img class="logo" src="src/tavernalogo.png" alt="Logga">
         </article>
     </header>
 
 
-        <article>
-            
-    <nav class="nav">
-        <ul id="meny">
-            <li><a href="index.html">Hem</a></li>
-            <li><a href="meny.html" class="current">Meny</a></li>
-            <li><a href="bestall.html">Beställ</a></li>
-        </ul>
-        <ul id="meny" class="andrameny">
-            <li><a href="#scrollToBBQ">BBQ</a></li>
-            <li><a href="#scrollToBurger">Burgare</a></li>
-            <li><a href="#scrollToDrinks">Dryck</a></li>
-            <li><a href="#scrollToDesserts">Dessert</a></li>
-        </ul>
-    </nav>
+    <article>
 
-    <main>
-        <article>
-            
+        <nav class="nav">
+            <ul id="meny">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="meny.html" class="current">Meny</a></li>
+                <li><a href="bestall.html">Beställ</a></li>
+            </ul>
+            <ul id="meny" class="andrameny">
+                <li><a href="#scrollToBBQ">BBQ</a></li>
+                <li><a href="#scrollToBurger">Burgare</a></li>
+                <li><a href="#scrollToDrinks">Dryck</a></li>
+                <li><a href="#scrollToDesserts">Dessert</a></li>
+            </ul>
+        </nav>
 
-        </article>        
+        <main>
+            <article>
 
-        <article class="dagens">
-            <h3>Tips från kocken: Dagens mat och dryck!</h3>
-            <p>(Fixa javaskript å grejer här) </p>
-        </article>
 
-        <h1 id="scrollToBBQ">Vår BBQ</h1>
-        <article id="bbqMenu"></article>
+            </article>
 
-        <h1 id="scrollToBurger">Våra burgare</h1>
-        <article id="burgerMenu"></article>
+            <article class="dagens">
+                <h3>Tips från kocken: Dagens mat och dryck!</h3>
+                <p>(Fixa javaskript å grejer här) </p>
+            </article>
 
-        <h1 id="scrollToDrinks">Våra drycker</h1>
-        <article id="drinkMenu"></article>
+            <h1 id="scrollToBBQ">Vår BBQ</h1>
+            <article id="bbqMenu"></article>
 
-        <h1 id="scrollToDesserts">Våra efterrätter</h1>
-        <article id="dessertMenu"></article>
+            <h1 id="scrollToBurger">Våra burgare</h1>
+            <article id="burgerMenu"></article>
 
-    </main>
-    <button id="showBtn">Se beställning</button>
-    <section id="orderList">
-        <button id="hideBtn">Stäng beställning</button>
-        <ul id="orderSummary"></ul>
-        
-    </section>
+            <h1 id="scrollToDrinks">Våra drycker</h1>
+            <article id="drinkMenu"></article>
 
-    <script src="script.js" type="module"></script>
-    <script src="db.js" type="module"></script>
+            <h1 id="scrollToDesserts">Våra efterrätter</h1>
+            <article id="dessertMenu"></article>
+
+        </main>
+
+
+
+
+        <div id="backgroundBlur"></div> <button id="showBtn">Se beställning</button>
+        <section id="orderList">
+            <h3>⤜ Din beställning ⤛</h3>
+            <ul id="orderSummary"></ul>
+            <section> <label for="tableNumber">Skriv in ditt bordsnummer: </label> <input type="number" min="1" max="30"
+                    name="Bordsnummer" id="tableNumber"> </section>
+            <aside class="buttonStyling"> <button id="hideBtn">Fortsätt beställa</button> <input type="submit"
+                    value="Lägg beställning" id="placeOrder"> </aside>
+        </section>
+
+        <script src="script.js" type="module"></script>
+        <script src="db.js" type="module"></script>
 </body>
+
 </html>
