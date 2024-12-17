@@ -227,16 +227,13 @@ const dbd = {
     ]
 };
 
-
-
-
 console.log(dbd);
 
 const bbq = dbd["bbqs"]; // Ändra till korrekt nyckel
-const bbqMenu = document.getElementById("bbqMenu"); // Kontrollera att elementet finns
+const bbqMenu = document.getElementById("bbqMenu"); //Kontrollera att elementet finns
 
 Object.values(bbq).forEach(dish => {
-    const aside = document.createElement("aside"); // Skapa ett element för varje rätt
+    const aside = document.createElement("aside"); //Skapa ett element för varje rätt
     aside.className = "dish"; // Varje section får ett klassnamn, detta kan vi använda för styling
 
     aside.innerHTML = `
@@ -245,18 +242,19 @@ Object.values(bbq).forEach(dish => {
         <h2>${dish.name}</h2>   
         <p>${dish.dsc}</p>
         <p>Pris: ${dish.price}:-</p>
+        <button class="itemBtn" id="${dish.id}" value="${dish.name}, pris: ${dish.price} kr">Lägg till</button>
         </section>
-    `; // Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
+    `; //Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
 
-    bbqMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
+    bbqMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
 });
 
-const burgers = dbd["burgers"]; // Ändra till korrekt nyckel
+const burgers = dbd["burgers"]; //Ändra till korrekt nyckel
 const burgerMenu = document.getElementById("burgerMenu"); // Kontrollera att elementet finns
 
 Object.values(burgers).forEach(dish => {
     const aside = document.createElement("aside"); // Skapa ett element för varje rätt
-    aside.className = "dish"; // Varje section får ett klassnamn, detta kan vi använda för styling
+    aside.className = "dish"; //Varje section får ett klassnamn, detta kan vi använda för styling
 
     aside.innerHTML = `
         <img src="${dish.img}" alt="${dish.name}">
@@ -264,18 +262,19 @@ Object.values(burgers).forEach(dish => {
         <h2>${dish.name}</h2>   
         <p>${dish.dsc}</p>
         <p>Pris: ${dish.price}:-</p>
+        <button class="itemBtn" id="${dish.id}" value="${dish.name}, pris: ${dish.price} kr">Lägg till</button>
         </section>
     `; // Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
 
-    burgerMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
+    burgerMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
 });
 
-const drinks = dbd["drinks"]; // Ändra till korrekt nyckel
+const drinks = dbd["drinks"]; //Ändra till korrekt nyckel
 const drinkMenu = document.getElementById("drinkMenu"); // Kontrollera att elementet finns
 
 Object.values(drinks).forEach(drink => {
     const aside = document.createElement("aside"); // Skapa ett element för varje rätt
-    aside.className = "dish"; // Varje section får ett klassnamn, detta kan vi använda för styling
+    aside.className = "dish"; //Varje section får ett klassnamn, detta kan vi använda för styling
 
     aside.innerHTML = `
         <img src="${drink.img}" alt="${drink.name}">
@@ -283,18 +282,19 @@ Object.values(drinks).forEach(drink => {
         <h2>${drink.name}</h2>   
         <p>${drink.dsc}</p>
         <p>Pris: ${drink.price}:-</p>
+        <button class="itemBtn" id="${drink.id}" value="${drink.name}, pris: ${drink.price} kr">Lägg till</button>
         </section>
     `; // Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
 
-    drinkMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
+    drinkMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
 });
 
-const desserts = dbd["desserts"]; // Ändra till korrekt nyckel
+const desserts = dbd["desserts"]; //Ändra till korrekt nyckel
 const dessertMenu = document.getElementById("dessertMenu"); // Kontrollera att elementet finns
 
 Object.values(desserts).forEach(dessert => {
     const aside = document.createElement("aside"); // Skapa ett element för varje rätt
-    aside.className = "dish"; // Varje section får ett klassnamn, detta kan vi använda för styling
+    aside.className = "dish"; //Varje section får ett klassnamn, detta kan vi använda för styling
 
     aside.innerHTML = `
         <img src="${dessert.img}" alt="${dessert.name}">
@@ -302,8 +302,58 @@ Object.values(desserts).forEach(dessert => {
         <h2>${dessert.name}</h2>   
         <p>${dessert.dsc}</p>
         <p>Pris: ${dessert.price}:-</p>
+        <button class="itemBtn" id="${dessert.id}" value="${dessert.name}, pris: ${dessert.price} kr">Lägg till</button>
         </section>  
-    `; // Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
+    `; //Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
 
-    dessertMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
+    dessertMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
 });
+
+
+let orderList = []; //Array för beställningar
+
+// Funktion för att hantera knapptryck och lägga till i orderlistan
+document.addEventListener("click", (event) => {
+    if (event.target && event.target.classList.contains("itemBtn")) {
+        const [name, priceInfo] = event.target.value.split(", pris: ");
+        const price = parseFloat(priceInfo.replace(" kr", "")); // Omvandla pris till ett nummer
+
+        // Kontrollera om objektet redan finns i beställningen
+        const existingItem = orderList.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.quantity += 1; // Öka kvantiteten om den redan finns
+        } else {
+            orderList.push({ name, price, quantity: 1 }); // Lägg till ny vara
+        }
+
+        updateOrderSummary(); // Uppdatera sammanfattningen av beställningen
+    }
+});
+
+// Funktion för att uppdatera orderöversikten
+function updateOrderSummary() {
+    const orderSummary = document.getElementById("orderSummary");
+    orderSummary.innerHTML = ""; // Töm orderöversikten innan den fylls på nytt
+
+    let totalPrice = 0;
+
+    orderList.forEach(item => {
+        const itemTotal = item.quantity * item.price;
+        totalPrice += itemTotal;
+
+        // Lägg till varje vara i orderöversikten
+        const li = document.createElement("li");
+        li.textContent = `${item.quantity} x ${item.name} ${itemTotal.toFixed(2)} kr`;
+        orderSummary.appendChild(li);
+    });
+
+    // Lägg till totalpris
+    const totalLi = document.createElement("li");
+    totalLi.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
+    orderSummary.appendChild(totalLi);
+}
+
+
+
+  
