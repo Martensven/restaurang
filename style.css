@@ -150,3 +150,45 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+
+
+/* Informations-popup-stilar */
+#infopopup {
+    display: none; /* Dölj popupen som standard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halvgenomskinlig bakgrund */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infopopup-content {
+    background-color: rgb(107, 97, 87);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    line-height: 1.1;
+   
+}
+
+#Jagfortstorbutton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(60, 54, 47); /* Grön knapp */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#Jagfortstorbutton:hover {
+    background-color:rgb(26, 22, 19);
+
+}
