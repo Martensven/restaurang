@@ -25,3 +25,6 @@ function getClassName(n) {
         default: return "";
     }
 }
+document.getElementById("submitBtn").addEventListener("click", function() { 
+    document.querySelectorAll('input[type="text"]').forEach(input => input.value = ''); 
+});
