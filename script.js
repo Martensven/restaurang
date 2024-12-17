@@ -307,4 +307,3 @@ Object.values(desserts).forEach(dessert => {
 
     dessertMenu.appendChild(aside); // Vi använder append för att sedan lägga till section-elementen.
 });
-
