@@ -353,7 +353,3 @@ function updateOrderSummary() {
     totalLi.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
     orderSummary.appendChild(totalLi);
 }
-
-
-
-  
