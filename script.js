@@ -386,6 +386,30 @@ const hideOrderList = document.getElementById('hideBtn')
 showOrderList.addEventListener('click', showOrder)
 hideOrderList.addEventListener('click', hideOrder)
 
+document.addEventListener('DOMContentLoaded', () => {
+    const showBtn = document.getElementById('showBtn');
+    const hideBtn = document.getElementById('hideBtn');
+    const orderList = document.getElementById('orderList');
+    const backgroundBlur = document.getElementById('backgroundBlur');
+
+    showBtn.addEventListener('click', () => {
+        orderList.style.display = 'flex'; // Visar modalen
+        backgroundBlur.style.display = 'block'; // Visar den blurrade bakgrunden
+    });
+
+    hideBtn.addEventListener('click', () => {
+        orderList.style.display = 'none'; // Gömmer modalen
+        backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
+    });
+
+    // Klick utanför modal för att stänga modal och bakgrund
+    backgroundBlur.addEventListener('click', () => {
+        orderList.style.display = 'none'; // Gömmer modalen
+        backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
+    });
+});
+
+
 
 
   

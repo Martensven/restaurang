@@ -33,10 +33,7 @@
         </nav>
 
         <main>
-            <article>
-
-
-            </article>
+            
 
             <article class="dagens">
                 <h3>Tips från kocken: Dagens mat och dryck!</h3>
@@ -56,15 +53,19 @@
             <article id="dessertMenu"></article>
 
         </main>
-        <button id="showBtn">Se beställning</button>
+
+
+
+
+        <div id="backgroundBlur"></div> <button id="showBtn">Se beställning</button>
         <section id="orderList">
-            <button id="hideBtn">Stäng beställning</button>
+            <h3>⤜ Din beställning ⤛</h3>
             <ul id="orderSummary"></ul>
-            <section>
-                <label for="tableNumber">Bordsnummer</label>
-                <input type="number" min="1" max="30" name="Bordsnummer" id="tableNumber">
-            </section>
-            <input type="submit" value="Lägg beställning" id="placeOrder">
+            <section> <label for="tableNumber">Skriv in ditt bordsnummer: </label> <input type="number" min="1" max="30"
+                    name="Bordsnummer" id="tableNumber"> </section>
+            <aside class="buttonStyling"> <button id="hideBtn">Fortsätt beställa</button> <input type="submit"
+                    value="Lägg beställning" id="placeOrder"> </aside>
+
         </section>
 
         <script src="script.js" type="module"></script>
