@@ -34,11 +34,17 @@
 
         <main>
             
-
-            <article class="dagens">
-                <h3>Tips från kocken: Dagens mat och dryck!</h3>
-                <p>(Fixa javaskript å grejer här) </p>
-            </article>
+        <div class="container">
+            <h1>Featured Food of the Day</h1>
+            <div id="featured-food">
+                <h2 id="day-name"></h2>
+                <img id="food-img" src="" alt="Food image">
+                <h3 id="food-name"></h3>
+                <p id="food-desc"></p>
+                <p>Price: <span id="food-price"></span></p>
+                <p>Location: <span id="food-country"></span></p>
+            </div>
+        </div>
 
             <h1 id="scrollToBBQ">Vår BBQ</h1>
             <article id="bbqMenu"></article>
@@ -54,9 +60,6 @@
 
         </main>
 
-
-
-
         <div id="backgroundBlur"></div> <button id="showBtn">Se beställning</button>
         <section id="orderList">
             <h3>⤜ Din beställning ⤛</h3>
@@ -65,11 +68,11 @@
                     name="Bordsnummer" id="tableNumber"> </section>
             <aside class="buttonStyling"> <button id="hideBtn">Fortsätt beställa</button> <input type="submit"
                     value="Lägg beställning" id="placeOrder"> </aside>
+         </section>
 
-        </section>
-
-        <script src="script.js" type="module"></script>
-        <script src="db.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    <script src="db.js" type="module"></script>
+    <script src="featuredFood.js" type="module"></script>
 </body>
 
 </html>

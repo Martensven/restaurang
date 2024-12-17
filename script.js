@@ -363,7 +363,7 @@ function updateOrderSummary() {
         orderSummary.appendChild(li);
     });
 
-    // Lägg till totalpris
+
     const totalP = document.createElement("p");
     totalP.classList = 'kundVagn';
     totalP.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
@@ -408,8 +408,3 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
     });
 });
-
-
-
-
-  

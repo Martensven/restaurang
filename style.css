@@ -133,6 +133,48 @@ ul {
     border-radius: 1%;
 }
 
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: beige;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  #featured-food img {
+    width: 80%; 
+    max-width: 300px; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-bottom: 20px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  
+  
+  h1 {
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  #day-name {
+    font-size: 24px;
+    color: #555;
+  }
+  
+  h3 {
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  p {
+    color: black;
+  }
+  
+
 /* Styling för bakgrundsblur */
 #backgroundBlur {
     position: fixed;
@@ -225,4 +267,5 @@ ul {
     background-color:rgb(26, 22, 19);
 
 }
+
 
