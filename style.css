@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding: 10px;
+    scroll-padding: 20vh;
 }
 
 body {
@@ -223,10 +223,6 @@ ul {
     margin: 2%;
     gap: 10px;
 }
-
-}
-
-
 
 /* Informations-popup-stilar */
 #infopopup {
