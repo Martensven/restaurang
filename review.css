@@ -1,0 +1,63 @@
+
+.stars{
+    top:30%;
+    left:36%;
+    list-style: none;
+    }
+    
+.stars {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: rgba(168, 147, 33, 0.382);
+}
+
+.stars .star.one, 
+.stars .star.two, 
+.stars .star.three, 
+.stars .star.four, 
+.stars .star.five {
+    color: gold;
+}
+.firstName{
+position:absolute;
+top:35%;
+left:17%
+}
+.lastName{
+position:absolute;
+top:35%;
+right:17%;
+}
+.firstName-textbox{
+position:absolute;
+top:37%;
+left:8%;
+}
+.lastName-textbox{
+position: absolute;
+top:37%;
+right:8%;
+}
+.foodName{
+position: absolute;
+top:41.5%;
+left:40%;
+}
+.foodName-textbox{
+position: absolute;
+top:44%;
+width:60%;
+left:17%;
+}
+.desc-label{
+ position: absolute;
+ top:50%;
+ left:25%;
+}
+.desc-textbox{
+position: absolute;
+top:53%;
+width:80%;
+height:25%;
+left:9%;
+}
