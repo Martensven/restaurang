@@ -1,3 +1,18 @@
+/* Popup rutan för information */
+window.onload = function() {
+    console.log("Sidan har laddats!");
+    document.getElementById('infopopup').style.display = 'flex';
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    var closeButton = document.getElementById('Jagfortstorbutton');
+    
+        closeButton.addEventListener('click', function() {
+            console.log("Knappen klickades!");  // Testa om klicket registreras
+            document.getElementById('infopopup').style.display = 'none';
+        }) 
+});
+
 const dbd = {
     "burgers": [
         {
