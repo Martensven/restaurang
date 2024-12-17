@@ -133,6 +133,7 @@ ul {
     border-radius: 1%;
 }
 
+
 .container {
     text-align: center;
     padding: 20px;
@@ -173,3 +174,98 @@ ul {
     color: black;
   }
   
+
+/* Styling för bakgrundsblur */
+#backgroundBlur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 43, 30, 0.6); /* Halvgenomskinlig svart överlägg */
+    backdrop-filter: blur(10px); /* Blurar bakgrunden */
+    z-index: 998; /* Ligger precis under modalen */
+    display: none; /* Gömmer överlägget initialt */
+}
+
+/* Styling för modal */
+#orderList {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto; /* Justera efter behov */
+    width: 80%; /* Justera efter behov */
+    z-index: 999; /* Gör så att fönstret ligger överst */
+    background-color: beige;
+    color: black;
+    backdrop-filter: none; /* Ingen blur på själva modalen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5%;
+    padding-bottom: 8%;
+    display: none; /* Gömmer modalen initialt */
+}
+
+#orderList ul {
+    list-style-type: none; /* Tar bort standardpunkterna */
+    padding: 0;
+
+    margin: 0;
+}
+
+.buttonStyling {
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    gap: 10px;
+}
+
+}
+
+
+
+/* Informations-popup-stilar */
+#infopopup {
+    display: none; /* Dölj popupen som standard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halvgenomskinlig bakgrund */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infopopup-content {
+    background-color: rgb(107, 97, 87);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    line-height: 1.1;
+   
+}
+
+#Jagfortstorbutton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(60, 54, 47); /* Grön knapp */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#Jagfortstorbutton:hover {
+    background-color:rgb(26, 22, 19);
+
+}
+
+

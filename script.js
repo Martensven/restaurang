@@ -1,3 +1,18 @@
+/* Popup rutan för information */
+window.onload = function() {
+    console.log("Sidan har laddats!");
+    document.getElementById('infopopup').style.display = 'flex';
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    var closeButton = document.getElementById('Jagfortstorbutton');
+    
+        closeButton.addEventListener('click', function() {
+            console.log("Knappen klickades!");  // Testa om klicket registreras
+            document.getElementById('infopopup').style.display = 'none';
+        }) 
+});
+
 const dbd = {
     "burgers": [
         {
@@ -348,8 +363,48 @@ function updateOrderSummary() {
         orderSummary.appendChild(li);
     });
 
-    // Lägg till totalpris
-    const totalLi = document.createElement("li");
-    totalLi.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
-    orderSummary.appendChild(totalLi);
+
+    const totalP = document.createElement("p");
+    totalP.classList = 'kundVagn';
+    totalP.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
+    orderSummary.appendChild(totalP);
 }
+
+function showOrder() {
+    const sidebar = document.querySelector('#orderList');
+    sidebar.style.display = 'flex';
+}
+
+function hideOrder() {
+    const sidebar = document.querySelector('#orderList');
+    sidebar.style.display = 'none';
+}
+
+const showOrderList = document.getElementById('showBtn')
+const hideOrderList = document.getElementById('hideBtn')
+
+showOrderList.addEventListener('click', showOrder)
+hideOrderList.addEventListener('click', hideOrder)
+
+document.addEventListener('DOMContentLoaded', () => {
+    const showBtn = document.getElementById('showBtn');
+    const hideBtn = document.getElementById('hideBtn');
+    const orderList = document.getElementById('orderList');
+    const backgroundBlur = document.getElementById('backgroundBlur');
+
+    showBtn.addEventListener('click', () => {
+        orderList.style.display = 'flex'; // Visar modalen
+        backgroundBlur.style.display = 'block'; // Visar den blurrade bakgrunden
+    });
+
+    hideBtn.addEventListener('click', () => {
+        orderList.style.display = 'none'; // Gömmer modalen
+        backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
+    });
+
+    // Klick utanför modal för att stänga modal och bakgrund
+    backgroundBlur.addEventListener('click', () => {
+        orderList.style.display = 'none'; // Gömmer modalen
+        backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
+    });
+});
