@@ -132,3 +132,21 @@ ul {
     margin-bottom: 2%;
     border-radius: 1%;
 }
+
+#orderList {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    /* "z-index: 999" Gör så att sidebar alltid ligger överst */
+    background-color: black;
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}

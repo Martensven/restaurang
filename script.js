@@ -349,10 +349,27 @@ function updateOrderSummary() {
     });
 
     // Lägg till totalpris
-    const totalLi = document.createElement("li");
-    totalLi.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
-    orderSummary.appendChild(totalLi);
+    const totalP = document.createElement("p");
+    totalP.classList = 'kundVagn';
+    totalP.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
+    orderSummary.appendChild(totalP);
 }
+
+function showOrder() {
+    const sidebar = document.querySelector('#orderList');
+    sidebar.style.display = 'flex';
+}
+
+function hideOrder() {
+    const sidebar = document.querySelector('#orderList');
+    sidebar.style.display = 'none';
+}
+
+const showOrderList = document.getElementById('showBtn')
+const hideOrderList = document.getElementById('hideBtn')
+
+showOrderList.addEventListener('click', showOrder)
+hideOrderList.addEventListener('click', hideOrder)
 
 
 
