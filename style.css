@@ -4,7 +4,12 @@ html {
 }
 
 body {
-    background-color: rgb(60, 54, 47);
+    /* background-color: rgb(60, 54, 47); */
+    background-image: url(src/woodbackround.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -17,6 +22,12 @@ body {
     padding: 5%;
 }
 
+.logo {
+    width: 70%;
+    height: 70%;
+    margin-bottom: 0;
+}
+
 .nav {
     position: sticky;
     top: 10px;
@@ -27,17 +38,21 @@ main {
 }
 
 
-    .info, .dagens, .dish, .bordskod, .bestall {
-        min-width: 90%;
-        margin: 0 0 3%;
-        padding: 5%;
-        background-color: beige;
-        color: rgb(35, 32, 28);
-        border-radius: 2%;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+.info,
+.dagens,
+.dish,
+.bordskod,
+.bestall {
+    min-width: 90%;
+    margin: 0 0 3%;
+    padding: 5%;
+    background-color: beige;
+    color: rgb(35, 32, 28);
+    border-radius: 2%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
-  
+
 h1 {
     font-size: xx-large;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -110,4 +125,10 @@ ul {
 #meny li a.current {
     background-color: rgb(107, 97, 87);
     color: beige;
+}
+
+.andrameny {
+    background-color: beige;
+    margin-bottom: 2%;
+    border-radius: 1%;
 }
