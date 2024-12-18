@@ -6,7 +6,6 @@ function gfg(n) {
     for (let i = 0; i < n; i++) {
         stars[i].classList.add(getClassName(n));
     }
-   
 }
 
 function remove() {
@@ -25,6 +24,24 @@ function getClassName(n) {
         default: return "";
     }
 }
-document.getElementById("submitBtn").addEventListener("click", function() { 
-    document.querySelectorAll('input[type="text"]').forEach(input => input.value = ''); 
+
+document.getElementById("submitBtn").addEventListener("click", function() {
+    let firstName = document.querySelector('input[name="firstName"]').value;
+    let lastName = document.querySelector('input[name="lastName"]').value;
+    let foodName = document.querySelector('input[name="foodName"]').value;
+    let desc = document.querySelector('input[name="foodName"]').value;
+    
+    let ul = document.createElement("ul");
+    ul.className = "user-review"; 
+    ul.innerHTML = `
+        <li>${firstName}</li>
+        <li>${lastName}</li>
+        <li>Vad åt du? ${foodName}</li>
+        <li>${desc}</li>
+    `;
+    document.body.appendChild(ul);
+
+
+    document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
 });
+
