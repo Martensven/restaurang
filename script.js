@@ -305,26 +305,6 @@ Object.values(drinks).forEach(drink => {
     drinkMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
 });
 
-const desserts = dbd["desserts"]; //Ändra till korrekt nyckel
-const dessertMenu = document.getElementById("dessertMenu"); // Kontrollera att elementet finns
-
-Object.values(desserts).forEach(dessert => {
-    const aside = document.createElement("aside"); // Skapa ett element för varje rätt
-    aside.className = "dish"; //Varje section får ett klassnamn, detta kan vi använda för styling
-
-    aside.innerHTML = `
-        <img src="${dessert.img}" alt="${dessert.name}">
-        <section>
-        <h2>${dessert.name}</h2>   
-        <p>${dessert.dsc}</p>
-        <p>Pris: ${dessert.price}:-</p>
-        <button class="itemBtn" id="${dessert.id}" value="${dessert.name}, pris: ${dessert.price} kr">Lägg till</button>
-        </section>  
-    `; //Allt efter '=' är vad vi vill att våra sektioner ska fyllas med
-
-    dessertMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
-});
-
 let orderList = []; //Array för beställningar
 
 // Funktion för att hantera knapptryck och lägga till i orderlistan
@@ -439,8 +419,6 @@ function addQuantity (index) {
     });
 }
 
-
-
 function showOrder() {
     const sidebar = document.querySelector('#orderList');
     sidebar.style.display = 'flex';
@@ -457,6 +435,66 @@ const hideOrderList = document.getElementById('hideBtn')
 showOrderList.addEventListener('click', showOrder)
 hideOrderList.addEventListener('click', hideOrder)
 
+// Hämta element
+const showBtn = document.getElementById("showBtn");
+const hideBtn = document.getElementById("hideBtn");
+const placeOrderBtn = document.getElementById("placeOrder");
 
+//betalning popup
+let paymentPopup;
+
+// Visa Se beställning popupen
+showBtn.addEventListener("click", () => {
+    orderList.style.display = "block"; // Visa beställningslistan
+    
+});
+
+// Döljer Se beställning popupen
+hideBtn.addEventListener("click", () => {
+    orderList.style.display = "none"; // Döljer beställningslistan
+});
+
+// Visa betalning popup när "Lägg beställning" klickas
+placeOrderBtn.addEventListener("click", () => {
+    // Skapa betalning popup
+    paymentPopup = document.createElement("div");
+    paymentPopup.id = "paymentPopup";
+    paymentPopup.innerHTML = `
+        <div class="popup-content">
+            <span id="closePaymentPopup" class="stang-popup">&times;</span>
+            <h2>Betalningsinformation</h2>
+            <p>Vänligen fyll i din betalningsinformation nedan:</p>
+            <form>
+                <label for="kortnummer">Kortnummer:</label><br>
+                <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456" required><br><br>
+                <label for="kortdatum">Utgångsdatum:</label><br>
+                <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
+                <label for="cvc">CVC:</label><br>
+                <input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
+                <button type="submit">Betala nu</button>
+            </form>
+        </div>
+    `;
+    paymentPopup.className = "popup";
+    document.body.appendChild(paymentPopup);
+
+    // Visa betalning popup
+    paymentPopup.style.display = "block";
+
+    // Hantera stängning av betalnings-popup
+    const closePaymentPopup = document.getElementById("closePaymentPopup");
+    closePaymentPopup.addEventListener("click", () => {
+        paymentPopup.style.display = "none";
+        document.body.removeChild(paymentPopup); // Ta bort popupen från DOM
+    });
+
+    // Dölj betalning popup om användaren klickar utanför innehållet
+    paymentPopup.addEventListener("click", (event) => {
+        if (event.target === paymentPopup) {
+            paymentPopup.style.display = "none";
+            document.body.removeChild(paymentPopup);
+        }
+    });
+});
 
 

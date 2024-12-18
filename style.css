@@ -347,6 +347,7 @@ p {
     transform: translateX(-50%); /* Justera så att knappen är exakt i mitten */
 }
 
+
 .popup {
     display: none; /* Dold som standard */
     position: fixed;
