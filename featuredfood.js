@@ -9,9 +9,8 @@ const dbd = {
           "dsc": "The Gramercy Tavern Burger - 4 Pack",
           "price": 99,
           "rate": 5,
-          "country": "New York, NY"
+          "country": "Stockholm kungenskurva 5a"
       },
-
       {
           "id": "vegan-burger-grill-kit-for-4",
           "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/105946/vegan-burger-grill-kit-for-4.1450ccef8c44f7394c93f58450ce67b9.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
@@ -19,9 +18,8 @@ const dbd = {
           "dsc": "Vegan Burger Grill Kit for 4",
           "price": 79,
           "rate": 4,
-          "country": "New York, NY"
+          "country": "Stockholm kungenskurva 5a"
       },
-
   ],
   "bbqs": [
       {
@@ -31,9 +29,8 @@ const dbd = {
           "dsc": "Mini Trinity BBQ Combo - Brisket, Ribs & Links",
           "price": 139,
           "rate": 4,
-          "country": "Los Angeles, CA"
+          "country": "Stockholm kungenskurva 5a"
       },
-
       {
           "id": "bbq-pork-spare-ribs-2-racks",
           "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/91839/texas-sized-bbq-ribs-2-racks.317434b983d87ea730139222ae983774.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
@@ -41,7 +38,7 @@ const dbd = {
           "dsc": "Texas Sized BBQ Ribs - 2 Racks",
           "price": 139,
           "rate": 5,
-          "country": "Lexington, TX"
+          "country": "Stockholm kungenskurva 5a"
       },
       {
           "id": "guys-bbq-trash-can-nachos-caliente-margaritas",
@@ -50,10 +47,8 @@ const dbd = {
           "dsc": "Guy's BBQ Trash Can Nachos + Caliente Margaritas",
           "price": 95,
           "rate": 5,
-          "country": "Flavortown, USA"
+          "country": "Stockholm kungenskurva 5a"
       },
-
-
   ],
   "drinks": [
       {
@@ -63,9 +58,8 @@ const dbd = {
           "dsc": "New Orleans Hurricane Mix",
           "price": 39,
           "rate": 5,
-          "country": "Natchitoches, LA"
+          "country": "Stockholm kungenskurva 5a"
       },
-
       {
           "id": "chickpea-chiller-kit-for-6",
           "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/106484/chickpea-chiller-kit-for-6.4310765c71ba524b5462ea9330d32446.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
@@ -73,9 +67,8 @@ const dbd = {
           "dsc": "Chickpea Chiller Kit for 6",
           "price": 89,
           "rate": 4,
-          "country": "New York, NY"
+          "country": "Stockholm kungenskurva 5a"
       },
-
   ],
   "desserts": [
       {
@@ -85,9 +78,8 @@ const dbd = {
           "dsc": "German Chocolate Killer Brownie®",
           "price": 39.99,
           "rate": 4,
-          "country": "Dayton, OH"
+          "country": "Stockholm kungenskurva 5a"
       },
-
       {
           "id": "sea-salted-caramel-swirl-cheesecake",
           "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134006/sea-salted-caramel-swirl-cheesecake.e2825335433fb7a272a5d77649a6849e.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
@@ -95,15 +87,14 @@ const dbd = {
           "dsc": "Sea-Salted Caramel Swirl Cheesecake",
           "price": 65,
           "rate": 4,
-          "country": "Hattiesburg, MS"
+          "country": "Stockholm kungenskurva 5a"
       },
- 
   ]
 };
 
 // Hämtar dagens namn
 function getDayName() {
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const days = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
   const today = new Date();
   return days[today.getDay()];
 }
@@ -111,20 +102,18 @@ function getDayName() {
 // Visar om det är lunch eller middag
 function getMealTime() {
   const now = new Date();
-  const time = now.getHours() * 60 + now.getMinutes(); // Total tid i minuter
-
-  // Lunch: 00.00 till 15.30, Middag: 15.30 till 23.59
-  return time < 930 ? "Today's lunch:" : "Today's dinner:";
+  const time = now.getHours() * 60 + now.getMinutes();
+  return time < 930 ? "Dagens lunch:" : "Dagens middag:";
 }
 
-// Väljer en slumpmässig maträtt från gruppens dbd.bbqs
+// Väljer en slumpmässig maträtt
 function getRandomDish() {
-  if (typeof dbd !== "undefined" && dbd.bbqs) { // Kontrollera att dbd finns
+  if (typeof dbd !== "undefined" && dbd.bbqs) {
       const dishes = dbd.bbqs;
       const randomIndex = Math.floor(Math.random() * dishes.length);
       return dishes[randomIndex];
   } else {
-      console.error("Kunde inte hitta dbd.bbqs! Kontrollera att db.js är korrekt inkluderat.");
+      console.error("Kunde inte hitta dbd.bbqs!");
       return null;
   }
 }
@@ -135,22 +124,21 @@ function renderFeaturedFood() {
   const mealTime = getMealTime();
   const food = getRandomDish();
 
-  // Kontrollera att alla HTML-element finns och att en rätt hittades
   if (food) {
-      document.getElementById("day-name").textContent = `${mealTime} ${dayName}`;
-      document.getElementById("food-img").src = food.img;
-      document.getElementById("food-img").alt = food.name;
-      document.getElementById("food-name").textContent = food.name;
-      document.getElementById("food-desc").textContent = food.dsc;
-      document.getElementById("food-price").textContent = `${food.price.toFixed(2)} kr`;
-      document.getElementById("food-country").textContent = food.country;
+      document.getElementById("dagens-namn").textContent = `${mealTime} ${dayName}`;
+      document.getElementById("mat-bild").src = food.img;
+      document.getElementById("mat-bild").alt = food.name;
+      document.getElementById("mat-namn").textContent = food.name;
+      document.getElementById("mat-beskrivning").textContent = food.dsc;
+      document.getElementById("mat-pris").textContent = `${food.price.toFixed(2)} kr`;
+      document.getElementById("mat-land").textContent = food.country;
   } else {
       console.error("Ingen maträtt hittades att rendera!");
   }
 }
 
-// Säkerställ att koden körs när sidan har laddats
+// Kör koden när sidan laddas
 document.addEventListener("DOMContentLoaded", () => {
-  renderFeaturedFood(); // Kör första gången
-  setInterval(renderFeaturedFood, 10000); // Uppdatera var 10:e sekund
+  renderFeaturedFood();
+  setInterval(renderFeaturedFood, 10000);
 });
