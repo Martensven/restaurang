@@ -346,62 +346,6 @@ document.addEventListener("click", (event) => {
     }
 });
 
-// Funktion för att uppdatera orderöversikten
-// function updateOrderSummary() {
-//     const orderSummary = document.getElementById("orderSummary");
-//     orderSummary.innerHTML = ""; // Töm orderöversikten innan den fylls på nytt
-
-//     let totalPrice = 0;
-
-//     orderList.forEach((item, index) => { // Lägg till index för att hitta rätt element
-//         const itemTotal = item.quantity * item.price;
-//         totalPrice += itemTotal;
-
-//         // Skapa en listpunkt för varje vara
-//         const li = document.createElement("li");
-//         li.innerHTML = `
-//         <button id="quantityDown" class="addRemove">-</button>
-//         <input type="number" value="${item.quantity}" class="quantity">
-//         <button id="quantityUp" class="addRemove">+</button> 
-//         x ${item.name} ${itemTotal.toFixed(2)} kr
-//         `;
-
-//         // Lägg till en "Ta bort"-knapp
-//         const removeBtn = document.createElement("button");
-//         removeBtn.textContent = "Ta bort";
-//         removeBtn.addEventListener("click", () => {
-//             removeItem(index); // Kör funktionen removeItem när knappen klickas
-//         });
-
-//         li.appendChild(removeBtn); // Lägg till knappen i listpunkten
-//         orderSummary.appendChild(li); // Lägg till listpunkten i översikten
-//     });
-
-//     // Lägg till totala priset
-//     const totalP = document.createElement("p");
-//     totalP.classList = 'kundVagn';
-//     totalP.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
-//     orderSummary.appendChild(totalP);
-// }
-
-// // Funktion för att ta bort en vara från orderlistan
-// function removeItem(index) {
-//     const item = orderList[index];
-    
-//     if (item.quantity > 1) {
-//         item.quantity -= 1; // Minska kvantiteten med 1
-//     } else {
-//         orderList.splice(index, 1); // Ta bort objektet om kvantiteten är 0
-//     }
-    
-//     updateOrderSummary(); // Uppdatera översikten
-// }
-
-// function addQuantity (index) {
-//     const item = orderList[index];
-//     item.quantity += 1;
-// }
-
 function updateOrderSummary() {
     const orderSummary = document.getElementById("orderSummary");
     orderSummary.innerHTML = ""; // Töm orderöversikten innan den fylls på nytt
@@ -416,11 +360,20 @@ function updateOrderSummary() {
         const li = document.createElement("li");
         li.innerHTML = `
             <button class="quantityDown addRemove" data-index="${index}">-</button>
-            <input type="number" value="${item.quantity}" class="quantity" disabled>
+            <input type="number" min="1" value="${item.quantity}" class="quantity" disabled>
             <button class="quantityUp addRemove" data-index="${index}">+</button>
             x ${item.name} ${itemTotal.toFixed(2)} kr
         `;
-        
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Ta bort";
+        removeBtn.classList.add("removeItem");
+        removeBtn.dataset.index = index; // Spara index som data-attribute
+        removeBtn.addEventListener("click", () => {
+            removeItem(index); // Kör funktionen removeItem när knappen klickas
+        });
+
+        li.appendChild(removeBtn); // Lägg till "Ta bort"-knappen i listpunkten
         orderSummary.appendChild(li); // Lägg till listpunkten i översikten
     });
 
@@ -432,12 +385,18 @@ function updateOrderSummary() {
 
     // Funktion för att ta bort en vara från orderlistan
 function removeItem(index) {
+    orderList.splice(index, 1); // Ta bort objektet från arrayen
+    updateOrderSummary(); // Uppdatera översikten
+}
+
+    // Funktion för att ta bort en vara från orderlistan
+function lessItem(index) {
     const item = orderList[index];
     
     if (item.quantity > 1) {
         item.quantity -= 1; // Minska kvantiteten med 1
     } else {
-        orderList.splice(index, 1); // Ta bort objektet om kvantiteten är 0
+        item.quantity == 1;
     }
     
     updateOrderSummary(); // Uppdatera översikten
@@ -460,7 +419,7 @@ function addQuantity (index) {
     document.querySelectorAll(".quantityDown").forEach(button => {
         button.addEventListener("click", () => {
             const index = parseInt(button.dataset.index, 10); // Få index från data-attribute
-            removeItem(index); // Minska kvantiteten
+            lessItem(index); // Minska kvantiteten
         });
     });
 }
@@ -480,6 +439,18 @@ const hideOrderList = document.getElementById('hideBtn')
 
 showOrderList.addEventListener('click', showOrder)
 hideOrderList.addEventListener('click', hideOrder)
+
+// function orderBtn (orderList) {
+//     const btn = document.getElementById('showBtn')
+
+//     if (orderList === empty) {
+//         btn.style.display = 'none'
+//     } else {
+//         btn.style.display = 'flex'
+//     }
+// }
+
+orderBtn();
 
 document.addEventListener('DOMContentLoaded', () => {
     const showBtn = document.getElementById('showBtn');

@@ -157,9 +157,10 @@ ul {
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-}
-
-h1 {
+  }
+  
+  
+  .featuredH1 {
     margin-bottom: 30px;
     color: #333;
 }
@@ -282,4 +283,9 @@ p {
     background-color:rgb(26, 22, 19);
 }
 
+#showBtn {
+    /* display: none; */
+    position: sticky;
+    bottom: 5vh;
+}
 
