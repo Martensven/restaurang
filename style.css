@@ -28,6 +28,12 @@ body {
     margin-bottom: 0;
 }
 
+.logoSmall {
+    width: 30%;
+    height: 30%;
+    margin: 0%;
+}
+
 .nav {
     position: sticky;
     top: 10px;
@@ -244,6 +250,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 0;
     background-color: rgba(0, 0, 0, 0.5); /* Halvgenomskinlig bakgrund */
     display: flex;
     justify-content: center;
@@ -251,20 +258,21 @@ ul {
 }
 
 .infopopup-content {
-    background-color: rgb(107, 97, 87);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: beige;
+    color: rgb(31, 28, 24);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     max-width: 400px;
     width: 100%;
     line-height: 1.1;
-   
 }
 
 #Jagfortstorbutton {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: rgb(60, 54, 47); /* Grön knapp */
+    background-color: rgb(60, 54, 47);
     color: white;
     border: none;
     border-radius: 5px;
@@ -273,7 +281,6 @@ ul {
 
 #Jagfortstorbutton:hover {
     background-color:rgb(26, 22, 19);
-
 }
 
 
