@@ -324,8 +324,7 @@ Object.values(desserts).forEach(dessert => {
     dessertMenu.appendChild(aside); //Vi använder append för att sedan lägga till section-elementen.
 });
 
-
-let orderList = []; // Array för beställningar
+let orderList = []; //Array för beställningar
 
 // Funktion för att hantera knapptryck och lägga till i orderlistan
 document.addEventListener("click", (event) => {
@@ -345,6 +344,10 @@ document.addEventListener("click", (event) => {
         updateOrderSummary(); // Uppdatera sammanfattningen av beställningen
     }
 });
+
+
+
+// Funktion för att uppdatera orderöversikten
 
 function updateOrderSummary() {
     const orderSummary = document.getElementById("orderSummary");
@@ -474,3 +477,4 @@ document.addEventListener('DOMContentLoaded', () => {
         backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
     });
 });
+

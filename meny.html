@@ -72,6 +72,29 @@
                     value="Lägg beställning" id="placeOrder"> </aside>
          </section>
 
+         <article>
+            <h3>Totalsumma: ... <button id="betala-knapp">Betala</button> </h3>
+        </article>
+        
+        
+        <div id="betal-popup" class="popup">
+            <div class="popup-content">
+                <span id="stang-betal-popup" class="stang-popup">&times;</span>
+                <h2>Betalningsinformation</h2>
+                <p>Vänligen fyll i din betalningsinformation nedan:</p>
+                <form>
+                    <label for="kortnummer">Kortnummer:</label><br>
+                    <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456" required><br><br>
+                    <label for="kortdatum">Utgångsdatum:</label><br>
+                    <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
+                    <label for="cvc">CVC:</label><br>
+                    <input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
+                    <button type="submit">Betala nu</button>
+                </form>
+            </div>
+        </div>
+        
+         
     <script src="script.js" type="module"></script>
     <script src="db.js" type="module"></script>
     <script src="featuredfood.js" type="module"></script>
