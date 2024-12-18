@@ -140,10 +140,9 @@ ul {
     background: beige;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  #featured-food img {
+}
+
+#utvald-mat img {
     width: 80%; 
     max-width: 300px; 
     height: auto; 
@@ -152,27 +151,27 @@ ul {
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-  }
-  
-  
-  h1 {
+}
+
+h1 {
     margin-bottom: 30px;
     color: #333;
-  }
-  
-  #day-name {
+}
+
+#dagens-namn {
     font-size: 24px;
     color: #555;
-  }
-  
-  h3 {
+}
+
+h3 {
     color: #333;
     margin: 10px 0;
-  }
-  
-  p {
+}
+
+p {
     color: black;
-  }
+}
+
   
 
 /* Styling för bakgrundsblur */
