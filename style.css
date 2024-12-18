@@ -155,7 +155,7 @@ ul {
   }
   
   
-  h1 {
+  .featuredH1 {
     margin-bottom: 30px;
     color: #333;
   }
@@ -276,4 +276,9 @@ ul {
 
 }
 
+#showBtn {
+    /* display: none; */
+    position: sticky;
+    bottom: 5vh;
+}
 
