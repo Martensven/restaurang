@@ -208,13 +208,25 @@ ul {
     padding: 5%;
     padding-bottom: 8%;
     display: none; /* Gömmer modalen initialt */
+    text-align: left;
 }
 
 #orderList ul {
     list-style-type: none; /* Tar bort standardpunkterna */
     padding: 0;
-
     margin: 0;
+}
+
+.quantity {
+    width: 20px;
+}
+
+.addRemove {
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 20px;
 }
 
 .buttonStyling {
