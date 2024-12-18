@@ -16,7 +16,7 @@
     </header>
 
     <article>
-        <ul id="meny" >
+        <ul id="meny">
             <li><a href="index.html">Hem</a></li>
             <li><a href="meny.html" class="current">Meny</a></li>
             <li><a href="review.html">Recensioner</a></li>
@@ -64,19 +64,20 @@
         <section id="orderList">
             <h3>⤜ Din beställning ⤛</h3>
             <ul id="orderSummary"></ul>
-            <section> 
-                <label for="tableNumber">Skriv in ditt bordsnummer: </label> 
-                <input type="number" name="Bordsnummer" min="1" max="30"  id="tableNumber" value="10"> 
+            <section>
+                <label for="tableNumber">Skriv in ditt bordsnummer: </label>
+                <input type="number" name="Bordsnummer" min="1" max="30" id="tableNumber" value="10">
             </section>
-            <aside class="buttonStyling"> <button id="hideBtn">Fortsätt beställa</button> <input type="submit"
-                    value="Lägg beställning" id="placeOrder"> </aside>
-         </section>
+            <aside class="buttonStyling"> 
+                <button id="hideBtn">Fortsätt beställa</button> <input type="submit" value="Lägg beställning" id="placeOrder">
+            </aside>
+        </section>
 
-         <article>
+        <article>
             <h3>Totalsumma: ... <button id="betala-knapp">Betala</button> </h3>
         </article>
-        
-        
+
+
         <div id="betal-popup" class="popup">
             <div class="popup-content">
                 <span id="stang-betal-popup" class="stang-popup">&times;</span>
@@ -84,7 +85,8 @@
                 <p>Vänligen fyll i din betalningsinformation nedan:</p>
                 <form>
                     <label for="kortnummer">Kortnummer:</label><br>
-                    <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456" required><br><br>
+                    <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456"
+                        required><br><br>
                     <label for="kortdatum">Utgångsdatum:</label><br>
                     <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
                     <label for="cvc">CVC:</label><br>
@@ -93,11 +95,10 @@
                 </form>
             </div>
         </div>
-        
-         
-    <script src="script.js" type="module"></script>
-    <script src="db.js" type="module"></script>
-    <script src="featuredfood.js" type="module"></script>
+
+
+        <script src="script.js" type="module"></script>
+        <script src="featuredfood.js" type="module"></script>
 </body>
 
 </html>
