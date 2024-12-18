@@ -32,36 +32,36 @@ h3{
 .stars .star.five {
     color: gold;
 }
-.firstname{
+.firstName{
 color: white;
 position:absolute;
 top:35%;
 left:17%
 
 }
-.lastname{
+.lastName{
 color: white;
 position:absolute;
 top:35%;
 right:17%;
 }
-.firstname-textbox{
+.firstName-textbox{
 position:absolute;
 top:37%;
 left:8%;
 }
-.lastname-textbox{
+.lastName-textbox{
 position: absolute;
 top:37%;
 right:8%;
 }
-.foodname{
+.foodName{
 color: white;
 position: absolute;
 top:41.5%;
 left:40%;
 }
-.foodname-textbox{
+.foodName-textbox{
 position: absolute;
 top:44%;
 width:60%;
@@ -88,4 +88,14 @@ top:80%;
 left:76%;
 border-radius: 20px;
 }
-
+.user-review{
+    position: absolute;
+    box-sizing: border-box;
+    background-color: white;
+    width: 65%;
+    height:10%;
+    list-style: none;
+    color:rgb(0, 0, 0);
+    left:18%;
+    top:90%;
+    }
