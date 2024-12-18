@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
     color: beige;
@@ -205,7 +206,7 @@ button {
 .featuredH1 {
     margin-bottom: 30px;
     color: #333;
-
+}
 h2 {
     font-size: 24px;
     color: rgb(43, 40, 34);
@@ -280,19 +281,10 @@ p {
 .buttonStyling {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin: 2%;
     gap: 10px;
-}
-
-#showBtn {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    bottom: 5vh;
-    left: 50%; /* Centrera horisontellt */
-    transform: translateX(-50%); /* Förflytta knappen till exakt mitten */
 }
 
 /* Informations-popup-stilar */
@@ -340,13 +332,19 @@ p {
 
 #showBtn {
     /* display: none; */
+    justify-content: center;
+    align-items: center;
+    align-self: center;
     position: sticky;
     bottom: 2vh;
-    width: 90%;
+    width: 80%;
     height: 9vh;
     box-shadow: 0 0 3px 1px rgb(33, 26, 19) inset;
     border: none;
     color: beige;
+    position: fixed;
+    left: 50%; /* Centrera horisontellt */
+    transform: translateX(-50%); /* Justera så att knappen är exakt i mitten */
 }
 
 .popup {
