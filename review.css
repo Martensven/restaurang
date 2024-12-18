@@ -1,91 +1,116 @@
-body{
-    padding:0;
-    margin:0;
+body {
+    padding: 0;
+    margin: 0;
     background-color: rgb(60, 54, 47);
 }
-h1{
-    position:absolute;
-    top:17%;
-    left:22%;
-    color:white;
+h1 {
+    position: absolute;
+    top: 17%;
+    left: 22%;
+    color: white;
 }
-h3{
+h3 {
     position: absolute;
     color: white;
-    top:24%;
-    lefT:29%;
+    top: 24%;
+    left: 29%;
 }
-.stars{
+
+.stars {
     position: absolute;
-    top:79%;
-    left:30%;
-    list-style: none;
+    top: 79%;
+    left: 32%;
     font-size: 1.5em;
     cursor: pointer;
     color: rgba(168, 147, 33, 0.382);
 }
 
-.stars .star.one, 
-.stars .star.two, 
-.stars .star.three, 
-.stars .star.four, 
-.stars .star.five {
+.stars .star.selected {
     color: gold;
 }
-.firstname{
-color: white;
-position:absolute;
-top:35%;
-left:17%
 
+.firstName {
+    color: white;
+    position: absolute;
+    top: 35%;
+    left: 17%
 }
-.lastname{
-color: white;
-position:absolute;
-top:35%;
-right:17%;
+.lastName {
+    position: absolute;
+    top: 35%;
+    right: 17%;
+    color: white;
 }
-.firstname-textbox{
-position:absolute;
-top:37%;
-left:8%;
+.firstName-textbox {
+    position: absolute;
+    top: 37%;
+    left: 8%;
 }
-.lastname-textbox{
-position: absolute;
-top:37%;
-right:8%;
+.lastName-textbox {
+    position: absolute;
+    top: 37%;
+    right: 8%;
 }
-.foodname{
-color: white;
-position: absolute;
-top:41.5%;
-left:40%;
+.foodName {
+    color: white;
+    position: absolute;
+    top: 41.5%;
+    left: 40%;
 }
-.foodname-textbox{
-position: absolute;
-top:44%;
-width:60%;
-left:17%;
+.foodName-textbox {
+    position: absolute;
+    top: 44%;
+    width: 60%;
+    left: 17%;
 }
-.desc-label{
-color:white;
- position: absolute;
- top:50%;
- left:25%;
+.desc-label {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 25%;
 }
-.desc-textbox{
-position: absolute;
-top:53%;
-width:80%;
-height:25%;
-left:9%;
+.desc-textbox {
+    position: absolute;
+    top: 53%;
+    width: 80%;
+    height: 25%;
+    left: 9%;
 }
-button{
-background-color: rgb(58, 43, 25);
-color: white;
-position: absolute;
-top:80%;
-left:76%;
-border-radius: 20px;
+button {
+    position: absolute;
+    top: 85%;
+    left: 80%;
+    background-color: rgb(35, 31, 27);
+    border-radius: 10px;
+    color: white;
+}
+.user-review {
+    position: relative;
+    box-sizing: border-box;
+    background-color: white;
+    width: 65%;
+    margin-top: 10px; 
+    color: rgb(0, 0, 0);
+    padding: 20px; 
+    list-style-type: none; 
+    min-height: 50px; 
+    height: auto; 
+    overflow: auto; 
+    word-wrap: break-word;
+    top:750px;
+    left:10%; 
 }
 
+
+.user-review ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.review-stars {
+    color: gold; 
+    font-size: 1.5em; 
+    text-shadow: 0 0 10px gold; 
+    margin-top: 5px; 
+}

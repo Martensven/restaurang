@@ -15,16 +15,14 @@
         </article>
     </header>
 
-
     <article>
-
+        <ul id="meny" >
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="meny.html" class="current">Meny</a></li>
+            <li><a href="review.html">Recensioner</a></li>
+        </ul>
         <nav class="nav">
-            <ul id="meny">
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="meny.html" class="current">Meny</a></li>
-                <li><a href="bestall.html">Beställ</a></li>
-            </ul>
-            <ul id="meny" class="andrameny">
+            <ul id="meny2" class="andraMeny">
                 <li><a href="#scrollToBBQ">BBQ</a></li>
                 <li><a href="#scrollToBurger">Burgare</a></li>
                 <li><a href="#scrollToDrinks">Dryck</a></li>
@@ -33,18 +31,17 @@
         </nav>
 
         <main>
-            
-            <div class="container">
-                <h1>Dagens mat och dryck</h1>
-                <div id="utvald-mat">
-                    <h2 id="dagens-namn"></h2>
+            <section class="container">
+                <h2>Dagens mat och dryck</h2>
+                <aside id="utvald-mat">
+                    <h3 id="dagens-namn"></h3>
                     <img id="mat-bild" src="" alt="Matbild">
                     <h3 id="mat-namn"></h3>
                     <p id="mat-beskrivning"></p>
                     <p>Pris: <span id="mat-pris"></span></p>
                     <p>Plats: <span id="mat-land"></span></p>
-                </div>
-            </div>
+                </aside>
+            </section>
 
             <h1 id="scrollToBBQ">Vår BBQ</h1>
             <article id="bbqMenu"></article>
@@ -60,12 +57,17 @@
 
         </main>
 
-        <div id="backgroundBlur"></div> <button id="showBtn">Se beställning</button>
+        <aside id="backgroundBlur"></aside>
+
+        <button id="showBtn">Se beställning</button>
+        
         <section id="orderList">
             <h3>⤜ Din beställning ⤛</h3>
             <ul id="orderSummary"></ul>
-            <section> <label for="tableNumber">Skriv in ditt bordsnummer: </label> <input type="number" min="1" max="30"
-                    name="Bordsnummer" id="tableNumber"> </section>
+            <section> 
+                <label for="tableNumber">Skriv in ditt bordsnummer: </label> 
+                <input type="number" name="Bordsnummer" min="1" max="30"  id="tableNumber" value="10"> 
+            </section>
             <aside class="buttonStyling"> <button id="hideBtn">Fortsätt beställa</button> <input type="submit"
                     value="Lägg beställning" id="placeOrder"> </aside>
          </section>
@@ -95,7 +97,7 @@
          
     <script src="script.js" type="module"></script>
     <script src="db.js" type="module"></script>
-    <script src="featuredFood.js" type="module"></script>
+    <script src="featuredfood.js" type="module"></script>
 </body>
 
 </html>

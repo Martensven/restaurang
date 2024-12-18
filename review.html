@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="review.css">
 </head>
 <body>
+
 <h1>Vad tyckte du?</h1>
 <h3>Hjälp oss bli bättre!</h3>
-    
 <section class="card">
 <section class="stars">
     <span onclick="gfg(1)" class="star">★</span>
@@ -21,21 +21,33 @@
 </section>
 
 <section class="names">
-    <label class="firstname">Förnamn</label>
-    <input type="text" class="firstname-textbox" name="firstname">
-    <label class="lastname">Efternamn</label>
-    <input type="text" class="lastname-textbox" name="lastname">
+    <label class="firstName">Förnamn</label>
+    <input type="text" class="firstName-textbox" name="firstName">
+    <label class="lastName">Efternamn</label>
+    <input type="text" class="lastName-textbox" name="lastName">
 </section>
 <section class="order">
-    <label class="foodname">Vad åt du?</label>
-    <input type="text" class="foodname-textbox" name="foodname">
+    <label class="foodName">Vad åt du?</label>
+    <input type="text" class="foodName-textbox" name="foodName">
 </section>
 <section class="descp">
     <label class="desc-label">Beskriv gärna din upplevelse</label>
-    <input type="text" class="desc-textbox" name="foodname">
+    <input type="text" class="desc-textbox" name="desc">
 </section>
+
 <button id="submitBtn">Skicka</button>
+
+<!-- Container för recensioner -->
+<div id="reviewsContainer"></div>
+
 <script src="review.js"></script>
+
 </body>
 </html>
+
+
+
+
+
+
 
