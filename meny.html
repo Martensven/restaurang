@@ -15,17 +15,14 @@
         </article>
     </header>
 
-
     <article>
-
-
         <ul id="meny" >
             <li><a href="index.html">Hem</a></li>
             <li><a href="meny.html" class="current">Meny</a></li>
             <li><a href="review.html">Recensioner</a></li>
         </ul>
         <nav class="nav">
-            <ul id="meny" class="andrameny">
+            <ul id="meny2" class="andraMeny">
                 <li><a href="#scrollToBBQ">BBQ</a></li>
                 <li><a href="#scrollToBurger">Burgare</a></li>
                 <li><a href="#scrollToDrinks">Dryck</a></li>
@@ -34,20 +31,19 @@
         </nav>
 
         <main>
-            
 
-            <div class="container">
-                <h1 class="featuredH1">Dagens mat och dryck</h1>
-                <div id="utvald-mat">
-                    <h2 id="dagens-namn"></h2>
+            <section class="container">
+                <h2>Dagens mat och dryck</h2>
+                <aside id="utvald-mat">
+                    <h3 id="dagens-namn"></h3>
+
                     <img id="mat-bild" src="" alt="Matbild">
                     <h3 id="mat-namn"></h3>
                     <p id="mat-beskrivning"></p>
                     <p>Pris: <span id="mat-pris"></span></p>
                     <p>Plats: <span id="mat-land"></span></p>
-                </div>
-
-            </div>
+                </aside>
+            </section>
 
             <h1 id="scrollToBBQ">Vår BBQ</h1>
             <article id="bbqMenu"></article>
@@ -64,6 +60,7 @@
         </main>
 
         <button id="showBtn">Se beställning</button>
+
         <section id="orderList">
             <h3>⤜ Din beställning ⤛</h3>
             <ul id="orderSummary"></ul>
@@ -75,6 +72,29 @@
                     value="Lägg beställning" id="placeOrder"> </aside>
          </section>
 
+         <article>
+            <h3>Totalsumma: ... <button id="betala-knapp">Betala</button> </h3>
+        </article>
+        
+        
+        <div id="betal-popup" class="popup">
+            <div class="popup-content">
+                <span id="stang-betal-popup" class="stang-popup">&times;</span>
+                <h2>Betalningsinformation</h2>
+                <p>Vänligen fyll i din betalningsinformation nedan:</p>
+                <form>
+                    <label for="kortnummer">Kortnummer:</label><br>
+                    <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456" required><br><br>
+                    <label for="kortdatum">Utgångsdatum:</label><br>
+                    <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
+                    <label for="cvc">CVC:</label><br>
+                    <input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
+                    <button type="submit">Betala nu</button>
+                </form>
+            </div>
+        </div>
+        
+         
     <script src="script.js" type="module"></script>
     <script src="db.js" type="module"></script>
     <script src="featuredfood.js" type="module"></script>

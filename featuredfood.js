@@ -142,3 +142,68 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFeaturedFood();
   setInterval(renderFeaturedFood, 10000);
 });
+
+// Hämta element
+const backgroundBlur = document.getElementById("backgroundBlur");
+const showBtn = document.getElementById("showBtn");
+const hideBtn = document.getElementById("hideBtn");
+const orderList = document.getElementById("orderList");
+const placeOrderBtn = document.getElementById("placeOrder");
+
+//betalning popup
+let paymentPopup;
+
+// Visa Se beställning popupen
+showBtn.addEventListener("click", () => {
+    orderList.style.display = "block"; // Visa beställningslistan
+    backgroundBlur.style.display = "block"; // Visa suddig bakgrund
+});
+
+// Döljer Se beställning popupen
+hideBtn.addEventListener("click", () => {
+    orderList.style.display = "none"; // Döljer beställningslistan
+    backgroundBlur.style.display = "none"; // Döljer suddig bakgrund
+});
+
+// Visa betalning popup när "Lägg beställning" klickas
+placeOrderBtn.addEventListener("click", () => {
+    // Skapa betalning popup
+    paymentPopup = document.createElement("div");
+    paymentPopup.id = "paymentPopup";
+    paymentPopup.innerHTML = `
+        <div class="popup-content">
+            <span id="closePaymentPopup" class="stang-popup">&times;</span>
+            <h2>Betalningsinformation</h2>
+            <p>Vänligen fyll i din betalningsinformation nedan:</p>
+            <form>
+                <label for="kortnummer">Kortnummer:</label><br>
+                <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456" required><br><br>
+                <label for="kortdatum">Utgångsdatum:</label><br>
+                <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
+                <label for="cvc">CVC:</label><br>
+                <input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
+                <button type="submit">Betala nu</button>
+            </form>
+        </div>
+    `;
+    paymentPopup.className = "popup";
+    document.body.appendChild(paymentPopup);
+
+    // Visa betalning popup
+    paymentPopup.style.display = "block";
+
+    // Hantera stängning av betalnings-popup
+    const closePaymentPopup = document.getElementById("closePaymentPopup");
+    closePaymentPopup.addEventListener("click", () => {
+        paymentPopup.style.display = "none";
+        document.body.removeChild(paymentPopup); // Ta bort popupen från DOM
+    });
+
+    // Dölj betalning popup om användaren klickar utanför innehållet
+    paymentPopup.addEventListener("click", (event) => {
+        if (event.target === paymentPopup) {
+            paymentPopup.style.display = "none";
+            document.body.removeChild(paymentPopup);
+        }
+    });
+});

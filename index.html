@@ -21,47 +21,60 @@
                 <ul id="meny">
                     <li><a href="index.html" class="current">Hem</a></li>
                     <li><a href="meny.html">Meny</a></li>
-                    <li><a href="bestall.html">Beställ</a></li>
+                    <li><a href="review.html">Recensioner</a></li>
                 </ul>
             </nav>
-        </article>        
-
-          <!-- Informations-popup -->
-    <aside id="infopopup" class="infopopup">
-        <article class="infopopup-content">
-            <img class="logoSmall" src="src/tavernalogo.png" alt="Logga">
-            <h3>⤜ VÄLKOMMEN ⤛</h3>
-            <p>Skriv in information till kunden hur beställning fungerar</p>
-            <button id="Jagfortstorbutton">Jag förstår!</button>
         </article>
-    </aside>
-    
+
+        <!-- Informations-popup -->
+        <aside id="infopopup" class="infopopup">
+            <article class="infopopup-content">
+                <img class="logoSmall" src="src/tavernalogo.png" alt="Logga">
+                <h3>⤜ VÄLKOMMEN ⤛</h3>
+                <p><b>Såhär beställer man:</b></p>
+                <p>⋆ Tryck på knappen <button>Lägg till</button> på de rätter du önskar.<br>
+                ⋆ Dubbelkolla så allt ser ut som det ska på <button>Se beställning</button><br>
+                ⋆ Skriv sedan in ditt bordsnummer. <br>
+                ⋆ När du är klar: tryck på <button>Till kassan</button> och betala där!</p>
+                <p>Så kommer vi ut med maten när den är klar. Smaklig måltid!</p>
+                <button id="Jagfortstorbutton">Jag förstår!</button>
+            </article>
+        </aside>
+
         <article class="info">
             <h3>⤜ VÄLKOMMEN ⤛</h3>
-            <p>Välkommen till Taverna, en anrik restaurang med över 40 års gastronomisk historia och en ny, spännande era som väntar! Tidigare hyllad för sitt italienska kök står Taverna redo att inviga sin nyöppning i början av det kommande året.
-            I hjärtat av Taverna möts tradition och förnyelse när restaurangen tar en kulinarisk resa mot den oemotståndliga smaken av amerikansk BBQ. Nya ägare har investerat både tid och passion för att skapa en atmosfär där gästerna kan fördjupa sig i en autentisk BBQ-upplevelse med varje utsökt tugga.
-            Den nya atmosfären på Taverna är lika inbjudande som den delikata maten. Moderna detaljer smälter samman med rustika inslag för att skapa en avslappnad och trivsam stämning. Oavsett om du söker en intim familjemiddag eller en kväll i goda vänners lag kommer Taverna vara platsen för en smakfull upplevelse.<br>
-            Så håll ögonen öppna för den storslagna nyöppningen i början av 2025!
-            </p>
+            <p><b>Hej och välkommen till Taverna, en anrik restaurang med över 40 års gastronomisk historia och en ny, spännande
+                era som väntar! Tidigare hyllad för sitt italienska kök står Taverna redo att inviga sin nyöppning i
+                början av det kommande året.</b></p>
+                <h4>Lite om oss:</h4>
+                <p>I hjärtat av Taverna möts tradition och förnyelse när restaurangen tar en kulinarisk resa mot den
+                oemotståndliga smaken av amerikansk BBQ. Nya ägare har investerat både tid och passion för att skapa en
+                atmosfär där gästerna kan fördjupa sig i en autentisk BBQ-upplevelse med varje utsökt tugga.
+                Den nya atmosfären på Taverna är lika inbjudande som den delikata maten. Moderna detaljer smälter samman
+                med rustika inslag för att skapa en avslappnad och trivsam stämning. Oavsett om du söker en intim
+                familjemiddag eller en kväll i goda vänners lag kommer Taverna vara platsen för en smakfull
+                upplevelse.</p>
+                <p>Så håll ögonen öppna för den storslagna nyöppningen i början av 2025!</p>
         </article>
 
-        <div class="container">
-            <h1 class="featuredH1">Dagens mat och dryck</h1>
-            <div id="utvald-mat">
-                <h2 id="dagens-namn"></h2>
+        <section class="container">
+            <h2>Dagens mat och dryck</h2>
+            <article id="utvald-mat">
+                <h3 id="dagens-namn"></h3>
+
                 <img id="mat-bild" src="" alt="Matbild">
                 <h3 id="mat-namn"></h3>
                 <p id="mat-beskrivning"></p>
                 <p>Pris: <span id="mat-pris"></span></p>
                 <p>Plats: <span id="mat-land"></span></p>
-            </div>
-        </div>
-        
-        
+            </article>
+        </section>
 
-    <script src="script.js" type="module"></script>
-    <script src="db.js" type="module"></script>
-    <script src="featuredfood.js" type="module"></script>
+
+
+        <script src="script.js" type="module"></script>
+        <script src="db.js" type="module"></script>
+        <script src="featuredfood.js" type="module"></script>
 </body>
 
 </html>
