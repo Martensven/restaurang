@@ -242,6 +242,7 @@ const dbd = {
     ]
 };
 
+
 console.log(dbd);
 
 const bbq = dbd["bbqs"]; // Ändra till korrekt nyckel
@@ -377,6 +378,16 @@ function updateOrderSummary() {
         orderSummary.appendChild(li); // Lägg till listpunkten i översikten
     });
 
+    // Kontrollera om det finns några li-element i orderSummary
+    const showBtn = document.getElementById("showBtn");
+
+    if (orderSummary.getElementsByTagName("li").length > 0) {
+        showBtn.style.display = 'flex'; // Visa knappen om det finns li-element
+        // showBtn.textContent = `Se beställning: ${li.itemTotal} kr}`
+    } else {
+        showBtn.style.display = 'none'; // Dölja knappen om det inte finns li-element
+    }
+    
     // Lägg till totala priset
     const totalP = document.createElement("p");
     totalP.classList = 'kundVagn';
@@ -388,6 +399,8 @@ function removeItem(index) {
     orderList.splice(index, 1); // Ta bort objektet från arrayen
     updateOrderSummary(); // Uppdatera översikten
 }
+
+    
 
     // Funktion för att ta bort en vara från orderlistan
 function lessItem(index) {
@@ -424,6 +437,8 @@ function addQuantity (index) {
     });
 }
 
+
+
 function showOrder() {
     const sidebar = document.querySelector('#orderList');
     sidebar.style.display = 'flex';
@@ -440,37 +455,5 @@ const hideOrderList = document.getElementById('hideBtn')
 showOrderList.addEventListener('click', showOrder)
 hideOrderList.addEventListener('click', hideOrder)
 
-// function orderBtn (orderList) {
-//     const btn = document.getElementById('showBtn')
 
-//     if (orderList === empty) {
-//         btn.style.display = 'none'
-//     } else {
-//         btn.style.display = 'flex'
-//     }
-// }
 
-orderBtn();
-
-document.addEventListener('DOMContentLoaded', () => {
-    const showBtn = document.getElementById('showBtn');
-    const hideBtn = document.getElementById('hideBtn');
-    const orderList = document.getElementById('orderList');
-    const backgroundBlur = document.getElementById('backgroundBlur');
-
-    showBtn.addEventListener('click', () => {
-        orderList.style.display = 'flex'; // Visar modalen
-        backgroundBlur.style.display = 'block'; // Visar den blurrade bakgrunden
-    });
-
-    hideBtn.addEventListener('click', () => {
-        orderList.style.display = 'none'; // Gömmer modalen
-        backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
-    });
-
-    // Klick utanför modal för att stänga modal och bakgrund
-    backgroundBlur.addEventListener('click', () => {
-        orderList.style.display = 'none'; // Gömmer modalen
-        backgroundBlur.style.display = 'none'; // Gömmer den blurrade bakgrunden
-    });
-});

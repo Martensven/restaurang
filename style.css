@@ -149,18 +149,18 @@ ul {
 }
 
 #utvald-mat img {
-    width: 80%; 
-    max-width: 300px; 
-    height: auto; 
-    border-radius: 10px; 
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
     margin-bottom: 20px;
-    display: block; 
-    margin-left: auto; 
+    display: block;
+    margin-left: auto;
     margin-right: auto;
-  }
-  
-  
-  .featuredH1 {
+}
+
+
+.featuredH1 {
     margin-bottom: 30px;
     color: #333;
 }
@@ -179,20 +179,7 @@ p {
     color: black;
 }
 
-  
 
-/* Styling för bakgrundsblur */
-#backgroundBlur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(54, 43, 30, 0.6); /* Halvgenomskinlig svart överlägg */
-    backdrop-filter: blur(10px); /* Blurar bakgrunden */
-    z-index: 998; /* Ligger precis under modalen */
-    display: none; /* Gömmer överlägget initialt */
-}
 
 /* Styling för modal */
 #orderList {
@@ -200,12 +187,17 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: auto; /* Justera efter behov */
-    width: 80%; /* Justera efter behov */
-    z-index: 999; /* Gör så att fönstret ligger överst */
-    background-color: beige;
+    height: 100vh;
+    /* Justera efter behov */
+    width: 80%;
+    /* Justera efter behov */
+    z-index: 999;
+    /* Gör så att fönstret ligger överst */
+    background-color: rgba(245, 245, 220, 0.76);
+    backdrop-filter: blur(5px);
     color: black;
-    backdrop-filter: none; /* Ingen blur på själva modalen */
+    /* backdrop-filter: none; */
+    /* Ingen blur på själva modalen */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -213,12 +205,14 @@ p {
     margin: 0;
     padding: 5%;
     padding-bottom: 8%;
-    display: none; /* Gömmer modalen initialt */
+    display: none;
+    /* Gömmer modalen initialt */
     text-align: left;
 }
 
 #orderList ul {
-    list-style-type: none; /* Tar bort standardpunkterna */
+    list-style-type: none;
+    /* Tar bort standardpunkterna */
     padding: 0;
     margin: 0;
 }
@@ -242,16 +236,29 @@ p {
     gap: 10px;
 }
 
+#showBtn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 5vh;
+    left: 50%; /* Centrera horisontellt */
+    transform: translateX(-50%); /* Förflytta knappen till exakt mitten */
+}
+
 /* Informations-popup-stilar */
 #infopopup {
-    display: none; /* Dölj popupen som standard */
+    display: none;
+    /* Dölj popupen som standard */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Halvgenomskinlig bakgrund */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Halvgenomskinlig bakgrund */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -280,12 +287,6 @@ p {
 }
 
 #Jagfortstorbutton:hover {
-    background-color:rgb(26, 22, 19);
-}
-
-#showBtn {
-    /* display: none; */
-    position: sticky;
-    bottom: 5vh;
+    background-color: rgb(26, 22, 19);
 }
 
