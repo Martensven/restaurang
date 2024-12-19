@@ -98,3 +98,284 @@ ul {
     background-color: rgb(107, 97, 87);
     color: beige;
 }
+/* Style för andraMeny */
+#meny2 li {
+    display: inline;
+    list-style: none;
+    text-align: center;
+}
+
+/* Ställer in stil för länkar i #meny */
+#meny2 li a {
+    padding: 1% 3%;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 2px;
+    background-color: #4c4431;
+    color: beige;
+}
+
+/* Ställer in stil för länkar vid hover */
+#meny2 li a:hover {
+    cursor: pointer;
+    background-color: #857a61;
+    color: beige;
+}
+
+/* Ställer in stil för länkar när de är besökta eller ej besökta */
+#meny2 a:link,
+#meny2 a:visited {
+    color: beige;
+    text-decoration: none;
+}
+
+.andraMeny {
+    background-color: #4c4131;
+    padding: 0 1% 0 1%;
+    margin-bottom: 6%;
+    box-shadow: 0 0 3px 1px rgb(33, 26, 19) inset;
+}
+
+.seBestallning {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button {
+    background-color: #4c4131;
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: beige;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#utvald-mat img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.featuredH1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+h2 {
+    font-size: 24px;
+    color: rgb(43, 40, 34);
+
+}
+
+#dagens-namn {
+    font-size: 20px;
+    color: rgb(63, 53, 42);
+}
+
+h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+p {
+    color: black;
+}
+
+
+
+/* Styling för modal */
+#orderList {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    /* Justera efter behov */
+    width: 80%;
+    /* Justera efter behov */
+    z-index: 999;
+    /* Gör så att fönstret ligger överst */
+    background-color: rgba(245, 245, 220, 0.76);
+    backdrop-filter: blur(5px);
+    color: black;
+    /* backdrop-filter: none; */
+    /* Ingen blur på själva modalen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5%;
+    padding-bottom: 8%;
+    display: none;
+    /* Gömmer modalen initialt */
+    text-align: left;
+}
+
+#orderList ul {
+    list-style-type: none;
+    /* Tar bort standardpunkterna */
+    padding: 0;
+    margin: 0;
+}
+
+.quantity {
+    width: 20px;
+}
+
+.addRemove {
+    background-color: rgba(255, 255, 255, 0);
+    color: #2d271d;
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 20px;
+}
+
+.buttonStyling {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    gap: 10px;
+}
+
+/* Informations-popup-stilar */
+#infopopup {
+    display: none;
+    /* Dölj popupen som standard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Halvgenomskinlig bakgrund */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infopopup-content {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: beige;
+    color: rgb(31, 28, 24);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    line-height: 1.1;
+}
+
+#Jagfortstorbutton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(60, 54, 47);
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#Jagfortstorbutton:hover {
+    background-color:rgb(26, 22, 19);
+}
+
+#showBtn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: sticky;
+    bottom: 2vh;
+    width: 80%;
+    height: 9vh;
+    box-shadow: 0 0 3px 1px rgb(33, 26, 19) inset;
+    border: none;
+    color: beige;
+    position: fixed;
+    left: 50%; /* Centrera horisontellt */
+    transform: translateX(-50%); /* Justera så att knappen är exakt i mitten */
+}
+
+
+.popup {
+    display: none; /* Dold som standard */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.stang-popup {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.stang-popup:hover,
+.stang-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.popup-content h2,
+.popup-content p,
+.popup-content label {
+    color: black;
+}
