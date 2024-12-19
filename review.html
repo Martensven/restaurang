@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <article>
+        <nav>
+            <ul id="meny">
+                <li><a href="index.html" class="current">Hem</a></li>
+                <li><a href="meny.html">Meny</a></li>
+                <li><a href="review.html">Recensioner</a></li>
+            </ul>
+        </nav>
+    </article>
+<h1>Vad tyckte du?</h1>
+<h3>Hjälp oss bli bättre!</h3>
+<section class="card">
+<section class="stars">
+    <span onclick="gfg(1)" class="star">★</span>
+    <span onclick="gfg(2)" class="star">★</span>
+    <span onclick="gfg(3)" class="star">★</span>
+    <span onclick="gfg(4)" class="star">★</span>
+    <span onclick="gfg(5)" class="star">★</span>
+</section>
+</section>
+
+<section class="names">
+    <label class="firstName">Förnamn</label>
+    <input type="text" class="firstName-textbox" name="firstName">
+    <label class="lastName">Efternamn</label>
+    <input type="text" class="lastName-textbox" name="lastName">
+</section>
+<section class="order">
+    <label class="foodName">Vad åt du?</label>
+    <input type="text" class="foodName-textbox" name="foodName">
+</section>
+<section class="descp">
+    <label class="desc-label">Beskriv gärna din upplevelse</label>
+    <input type="text" class="desc-textbox" name="desc">
+</section>
+
+<button id="submitBtn">Skicka</button>
+
+<!-- Container för recensioner -->
+<div id="reviewsContainer"></div>
+
+<script src="review.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -11,7 +11,7 @@
 <body>
     <header>
         <article>
-            <h1>Taverna</h1>         
+            <img class="logo" src="src/tavernalogo.png" alt="Logga">       
         </article>
     </header>
 
@@ -21,15 +21,22 @@
                 <ul id="meny">
                     <li><a href="index.html">Hem</a></li>
                     <li><a href="meny.html">Meny</a></li>
-                    <li><a href="dryck.html">Dryck</a></li>
                     <li><a href="bestall.html" class="current">Beställ</a></li>
                 </ul>
             </nav>
         </article>        
 
-        <article class="dagens">
-            <h3>Tips från kocken: Dagens mat och dryck!</h3>
-        </article>
+        <div class="container">
+            <h1>Dagens mat och dryck</h1>
+            <div id="utvald-mat">
+                <h2 id="dagens-namn"></h2>
+                <img id="mat-bild" src="" alt="Matbild">
+                <h3 id="mat-namn"></h3>
+                <p id="mat-beskrivning"></p>
+                <p>Pris: <span id="mat-pris"></span></p>
+                <p>Plats: <span id="mat-land"></span></p>
+            </div>
+        </div>
 
         <article class="bestall">
             <h3>DIN BESTÄLLNING</h3>
@@ -51,6 +58,7 @@
 
     <script src="script.js"></script>
     <script src="db.js"></script>
+    <!-- <script src="featuredfood.js" type="module"></script> -->
 </body>
 
 </html>

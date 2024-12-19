@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taverna</title>
     <link rel="stylesheet" href="style.css">
+    <script src="db.js" defer></script>
+    <script src="featuredfood.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
         <article>
-            <h1 id="taverna">Taverna</h1>         
+            <img class="logo" src="src/tavernalogo.png" alt="Logga">
         </article>
     </header>
 
-    <nav class="nav">
+    <article>
         <ul id="meny">
-            <li><a href="#taverna">Hem</a></li>
-            <li><a href="#scrollToBBQ" class="current">BBQ</a></li>
-            <li><a href="#scrollToBurger">Burgare</a></li>
-            <li><a href="#scrollToDrinks">Dryck</a></li>
-            <li><a href="#scrollToDesserts">Dessert</a></li>
-            <li><a href="bestall.html">Beställ</a></li>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="meny.html" class="current">Meny</a></li>
+            <li><a href="review.html">Recensioner</a></li>
         </ul>
-    </nav>
+        <nav class="nav">
+            <ul id="meny2" class="andraMeny">
+                <li><a href="#scrollToBBQ">BBQ</a></li>
+                <li><a href="#scrollToBurger">Burgare</a></li>
+                <li><a href="#scrollToDrinks">Dryck</a></li>
+                <li><a href="#scrollToDesserts">Dessert</a></li>
+            </ul>
+        </nav>
 
-    <main>
-        <article>
-            
-        </article>        
+        <main>
 
-        <article class="dagens">
-            <h3>Tips från kocken: Dagens mat och dryck!</h3>
-            <p>(Fixa javaskript å grejer här) </p>
-        </article>
+            <section class="container">
+                <h2>Dagens mat och dryck</h2>
+                <aside id="utvald-mat">
+                    <h3 id="dagens-namn"></h3>
 
-        <h1 id="scrollToBBQ">Vår BBQ</h1>
-        <article id="bbqMenu"></article>
+                    <img id="mat-bild" src="" alt="Matbild">
+                    <h3 id="mat-namn"></h3>
+                    <p id="mat-beskrivning"></p>
+                    <p>Pris: <span id="mat-pris"></span></p>
+                    <p>Plats: <span id="mat-land"></span></p>
+                </aside>
+            </section>
 
-        <h1 id="scrollToBurger">Våra burgare</h1>
-        <article id="burgerMenu"></article>
+            <h1 id="scrollToBBQ">Vår BBQ</h1>
+            <article id="bbqMenu"></article>
 
-        <h1 id="scrollToDrinks">Våra drycker</h1>
-        <article id="drinkMenu"></article>
+            <h1 id="scrollToBurger">Våra burgare</h1>
+            <article id="burgerMenu"></article>
 
-        <h1 id="scrollToDesserts">Våra efterrätter</h1>
-        <article id="dessertMenu"></article>
+            <h1 id="scrollToDrinks">Våra drycker</h1>
+            <article id="drinkMenu"></article>
 
-    </main>
+            <h1 id="scrollToDesserts">Våra efterrätter</h1>
+            <article id="dessertMenu"></article>
+
+        </main>
+
+        <button id="showBtn">Se beställning</button>
+
+        <section id="orderList">
+            <h3>⤜ Din beställning ⤛</h3>
+            <ul id="orderSummary"></ul>
+            <section>
+                <label for="tableNumber">Skriv in ditt bordsnummer: </label>
+                <input type="number" name="Bordsnummer" min="1" max="30" id="tableNumber" value="10">
+            </section>
+            <aside class="buttonStyling">
+                <button id="hideBtn">Fortsätt beställa</button> <input type="submit" value="Lägg beställning"
+                    id="placeOrder">
+            </aside>
+        </section>
+
+        <div id="betal-popup" class="popup">
+            <div class="popup-content">
+                <span id="stang-betal-popup" class="stang-popup">&times;</span>
+                <h2>Betalningsinformation</h2>
+                <p>Vänligen fyll i din betalningsinformation nedan:</p>
+                <form>
+                    <label for="kortnummer">Kortnummer:</label><br>
+                    <input type="text" id="kortnummer" name="kortnummer" placeholder="1234 5678 9012 3456"
+                        required><br><br>
+                    <label for="kortdatum">Utgångsdatum:</label><br>
+                    <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
+                    <label for="cvc">CVC:</label><br>
+                    <input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
+                    <button type="submit">Betala nu</button>
+                </form>
+            </div>
+        </div>
 
 
-    <script src="script.js" type="module"></script>
-    <script src="db.js" type="module"></script>
+        <script src="script.js" defer></script>
+        <script src="featuredfood.js" defer></script>
 </body>
+
 </html>

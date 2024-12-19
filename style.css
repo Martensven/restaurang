@@ -1,14 +1,20 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding: 10px;
+    scroll-padding: 20vh;
 }
 
 body {
-    background-color: rgb(60, 54, 47);
+    /* background-color: rgb(60, 54, 47); */
+    background-image: url(src/woodbackround.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
     color: beige;
@@ -17,14 +23,42 @@ body {
     padding: 5%;
 }
 
+.logo {
+    width: 70%;
+    height: 70%;
+    margin-bottom: 0;
+}
+
+.logoSmall {
+    width: 30%;
+    height: 30%;
+    margin: 0%;
+}
+
 .nav {
     position: sticky;
-    top: 10px;
+    top: 0;
 }
 
 main {
     overflow-x: hidden;
 }
+
+
+.info,
+.dagens,
+.dish,
+.bordskod,
+.bestall {
+    min-width: 90%;
+    margin: 0 0 3%;
+    padding: 5%;
+    background-color: beige;
+    color: rgb(35, 32, 28);
+    border-radius: 2%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
 h1 {
     font-size: xx-large;
@@ -49,6 +83,7 @@ h1 {
     display: flex;
 }
 
+
 .dish img {
     width: 50%;
     height: 50%;
@@ -57,10 +92,10 @@ h1 {
 
 ul {
     padding-left: 0px;
-    margin-bottom: 0px;
+    margin: 0px;
 }
 
-/* Ställer in listobjekt i #meny att visas inline och utan punktlista */
+/* Style för huvudmeny */
 #meny li {
     display: inline;
     list-style: none;
@@ -98,6 +133,7 @@ ul {
     background-color: rgb(107, 97, 87);
     color: beige;
 }
+
 /* Style för andraMeny */
 #meny2 li {
     display: inline;
