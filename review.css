@@ -1,116 +1,174 @@
 body {
-    padding: 0;
-    margin: 0;
-    background-color: rgb(60, 54, 47);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url(src/woodbackround.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: beige;
 }
+
+#meny {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 2%;
+  margin: 10% 0 10% 0;
+}
+
+#meny li {
+  list-style: none;
+  text-align: center; 
+}
+
+#meny li a {
+  text-align: center;
+  white-space: nowrap;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-radius: 2px;
+  background-color: beige;
+  color: rgb(35, 32, 28);
+  padding: 5px 10px 5px 10px;
+}
+
+#meny li a:hover {
+  cursor: pointer;
+  background-color: rgb(145, 134, 124);
+  color: rgb(35, 32, 28);
+}
+
+#meny a:link,
+#meny a:visited {
+  color: rgb(35, 32, 28);
+  text-decoration: none;
+}
+
+#meny li a.current {
+  background-color: rgb(107, 97, 87);
+  color: beige;
+}
+
+h1, h3 {
+  color: white;
+}
+
 h1 {
-    position: absolute;
-    top: 17%;
-    left: 22%;
-    color: white;
+  margin-top: 1em;
 }
+
 h3 {
-    position: absolute;
-    color: white;
-    top: 24%;
-    left: 29%;
+  margin-top: 0.5em;
+}
+
+.testBox {
+  background-color: rgba(245, 245, 220, 0.274);
+  padding: 6%;
+  margin: 1%;
+  min-width: 80%;
+  border-radius: 10px;
+}
+
+.logo {
+  width: 30%;
+  height: 30%;
+  margin: 0;
 }
 
 .stars {
-    position: absolute;
-    top: 79%;
-    left: 32%;
-    font-size: 1.5em;
-    cursor: pointer;
-    color: rgba(168, 147, 33, 0.382);
+  font-size: 1.5em;
+  cursor: pointer;
+  color: rgba(168, 148, 33, 0.808);
 }
 
 .stars .star.selected {
-    color: gold;
+  color: gold;
+  text-shadow: 0 0 10px gold;
 }
 
-.firstName {
-    color: white;
-    position: absolute;
-    top: 35%;
-    left: 17%
+.names, .order, .descp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1em 0;
 }
-.lastName {
-    position: absolute;
-    top: 35%;
-    right: 17%;
-    color: white;
+
+.names label, .order label, .descp label {
+  color: white;
+  margin-bottom: 0.5em;
+  flex-direction: row;
 }
-.firstName-textbox {
-    position: absolute;
-    top: 37%;
-    left: 8%;
+
+.names input, .order input, .descp input {
+  width: 80%;
+  padding: 0.5em;
+  margin-bottom: 1em;
 }
-.lastName-textbox {
-    position: absolute;
-    top: 37%;
-    right: 8%;
-}
-.foodName {
-    color: white;
-    position: absolute;
-    top: 41.5%;
-    left: 40%;
-}
-.foodName-textbox {
-    position: absolute;
-    top: 44%;
-    width: 60%;
-    left: 17%;
-}
-.desc-label {
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-}
-.desc-textbox {
-    position: absolute;
-    top: 53%;
-    width: 80%;
-    height: 25%;
-    left: 9%;
-}
+
 button {
-    position: absolute;
-    top: 85%;
-    left: 80%;
-    background-color: rgb(35, 31, 27);
-    border-radius: 10px;
-    color: white;
-}
-.user-review {
-    position: relative;
-    box-sizing: border-box;
-    background-color: white;
-    width: 65%;
-    margin-top: 10px; 
-    color: rgb(0, 0, 0);
-    padding: 20px; 
-    list-style-type: none; 
-    min-height: 50px; 
-    height: auto; 
-    overflow: auto; 
-    word-wrap: break-word;
-    top:750px;
-    left:10%; 
+  background-color: beige;
+  border-radius: 10px;
+  color: rgb(35, 32, 28);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  padding: 1em 2em;
+  border: none;
+  cursor: pointer;
 }
 
+.user-review {
+  box-sizing: border-box;
+  background-color: white;
+  min-width: 45vh;
+  margin: 10px 0px 30px 0px;
+  color: rgb(0, 0, 0);
+  padding: 5% 1% 10% 1%;
+  list-style-type: none;
+  min-height: 50px;
+  height: auto;
+  overflow: auto;
+  border-radius: 10px;
+}
 
 .user-review ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .review-stars {
-    color: gold; 
-    font-size: 1.5em; 
-    text-shadow: 0 0 10px gold; 
-    margin-top: 5px; 
+  color: gold;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px gold;
+  margin-top: 5px;
 }
+
+  .logo {
+    width: 50%;
+    height: 50%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-top: 2em;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin-top: 1em;
+  }
+
+  button {
+    width: 80%;
+    margin: 1em 0;
+  }
