@@ -393,13 +393,16 @@ form input {
     width: 90%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(31, 28, 24);
     border-radius: 5px;
+    background-color: beige;
+    color: rgb(31, 28, 24);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 form button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgb(60, 54, 47);
+    color: beige;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -407,11 +410,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #45a049;
+    background-color: rgb(26, 22, 19);
 }
 
 .popup-content h2,
 .popup-content p,
 .popup-content label {
-    color: black;
+    color: rgb(31, 28, 24);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
