@@ -23,7 +23,7 @@ function populateMenu(data, menuElementId) {
         aside.className = "dish";
         aside.innerHTML = `
             <img src="${dish.img}" alt="${dish.name}">
-            <section>
+            <section class="dishText">
                 <h2>${dish.name}</h2>
                 <p>${dish.dsc}</p>
                 <p>Pris: ${dish.price}:-</p>
@@ -76,16 +76,21 @@ function updateOrderSummary() {
 
         // Skapa en listpunkt för varje vara
         const li = document.createElement("li");
+        li.classList = 'liOrderList'
         li.innerHTML = `
-            <button class="quantityDown addRemove" data-index="${index}">-</button>
-            <input type="number" min="1" value="${item.quantity}" class="quantity" disabled>
-            <button class="quantityUp addRemove" data-index="${index}">+</button>
+            <section class="namePrice">
             ${item.name} ${itemTotal.toFixed(2)} kr
-        `;
+            </section>
+            <section class="quant">
+            <button class="quantityDown addRemove" data-index="${index}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg></button>
+            <input type="number" min="1" value="${item.quantity}" class="quantity" disabled>
+            <button class="quantityUp addRemove" data-index="${index}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg></button>
+            </section>
+            `;
 
         const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Ta bort";
-        removeBtn.classList.add("removeItem");
+        removeBtn.classList = 'removeBtn';
+        removeBtn.innerHTML = `<strong>X</strong>`
         removeBtn.dataset.index = index; // Spara index som data-attribute
         removeBtn.addEventListener("click", () => {
             removeItem(index); // Kör funktionen removeItem när knappen klickas

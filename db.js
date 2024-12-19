@@ -12,7 +12,7 @@ const dbd = {
         {
             "id": "shake-shack-shackburger",
             "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134862/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.png?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-            "name": "Shake Shack",
+            "name": "Shake Shack Shackburger",
             "dsc": "Shake Shack ShackBurger®",
             "price": 49,
             "rate": 5,
@@ -60,7 +60,7 @@ const dbd = {
         {
             "id": "guys-bbq-trash-can-nachos-caliente-margaritas",
             "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134759/guys-bbq-trash-can-nachos-caliente-margaritas.8e15c70f4f0aef2bc3643274bd29459a.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-            "name": "Guy Fieri",
+            "name": "Guy Fieri's Nachos and Marg",
             "dsc": "Guy's BBQ Trash Can Nachos + Caliente Margaritas",
             "price": 95,
             "rate": 5,
@@ -117,7 +117,7 @@ const dbd = {
         {
             "id": "guys-caliente-margaritas",
             "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/126836/guys-caliente-margaritas-for-12.ca8c6bc06b8f1039549385ffcebc749d.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-            "name": "Guy Fieri",
+            "name": "Guy Fieri's Marg",
             "dsc": "Guy's Caliente Margaritas",
             "price": 69,
             "rate": 5,
@@ -171,7 +171,7 @@ const dbd = {
         {
             "id": "iggys-soda",
             "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/136853/Iggys-Soda-1.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-            "name": "Iggy's",
+            "name": "Iggy's soda pop",
             "dsc": "Iggy's Soda",
             "price": 11,
             "rate": 4,

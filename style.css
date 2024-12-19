@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding: 20vh;
+    scroll-padding: 10vh;
 }
 
 body {
@@ -71,8 +71,8 @@ h1 {
 .bordskod,
 .bestall {
     max-width: 90%;
-    margin: 0 0 3%;
-    padding: 5%;
+    /* margin: 0 0 3%;
+    padding: 5%; */
     background-color: beige;
     color: rgb(35, 32, 28);
     border-radius: 2%;
@@ -81,13 +81,26 @@ h1 {
 
 .dish {
     display: flex;
+    justify-content: center;
 }
 
 
 .dish img {
-    width: 50%;
-    height: 50%;
+    width: 150px;
+    height: 150px;
     margin-right: 1%;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.dishText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 ul {
@@ -185,6 +198,25 @@ button {
     border: none;
     border-radius: 5px;
     padding: 5px;
+    transition: 100ms;
+    outline: none;
+}
+
+button:active {
+    background-color: beige;
+    color: #4c4131;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+button.removeBtn {
+    background-color: red;
+    /* border-radius: 50%; */
+    height: 25px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
 }
 
 .container {
@@ -208,6 +240,7 @@ button {
     margin-bottom: 30px;
     color: #333;
 }
+
 h2 {
     font-size: 24px;
     color: rgb(43, 40, 34);
@@ -245,18 +278,18 @@ p {
     background-color: rgba(245, 245, 220, 0.76);
     backdrop-filter: blur(5px);
     color: black;
-    /* backdrop-filter: none; */
-    /* Ingen blur på själva modalen */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0;
     padding: 5%;
     padding-bottom: 8%;
     display: none;
     /* Gömmer modalen initialt */
     text-align: left;
+    overflow-y: auto;
+
 }
 
 #orderList ul {
@@ -264,19 +297,57 @@ p {
     /* Tar bort standardpunkterna */
     padding: 0;
     margin: 0;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.liOrderList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    margin-top: 2vh;
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+}
+
+.yourOrder {
+    justify-content: flex-start;
 }
 
 .quantity {
     width: 20px;
 }
 
+.namePrice {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: left;
+    margin-right: auto;
+}
+
+.quant {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 80px;
+    max-width: 100px;
+    justify-content: flex-end;
+}
+
 .addRemove {
-    background-color: rgba(255, 255, 255, 0);
-    color: #2d271d;
-    text-align: center;
-    outline: none;
+    background-color: #33333300;
     border: none;
-    width: 20px;
+    border-radius: none;
+    display: flex;
+    padding: 3px;
+    height: 15px;
+    width: 15px;
+    color: #4c4131;
+    font-size: medium;
+    box-sizing: border-box;
+    line-height: 2px;
 }
 
 .buttonStyling {
@@ -328,7 +399,7 @@ p {
 }
 
 #Jagfortstorbutton:hover {
-    background-color:rgb(26, 22, 19);
+    background-color: rgb(26, 22, 19);
 }
 
 #showBtn {
@@ -344,13 +415,37 @@ p {
     border: none;
     color: beige;
     position: fixed;
-    left: 50%; /* Centrera horisontellt */
-    transform: translateX(-50%); /* Justera så att knappen är exakt i mitten */
+    left: 50%;
+    /* Centrera horisontellt */
+    transform: translateX(-50%);
+    /* Justera så att knappen är exakt i mitten */
+}
+
+#showBtn:active {
+    background-color: beige;
+    color: #4c4131;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+#placeOrder {
+    background-color: #4c4131;
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 100ms;
+}
+
+#placeOrder:active {
+    background-color: beige;
+    color: #4c4131;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 
 .popup {
-    display: none; /* Dold som standard */
+    display: none;
+    /* Dold som standard */
     position: fixed;
     z-index: 1000;
     left: 0;
