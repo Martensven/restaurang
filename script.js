@@ -182,7 +182,7 @@ let paymentPopup;
 
 const placeOrderBtn = document.getElementById("placeOrder");
 
-// Visa betalning popup när "Lägg beställning" klickas
+// Visa betalning popup när Lägg beställning klickas
 placeOrderBtn.addEventListener("click", () => {
     // Skapa betalning popup
     paymentPopup = document.createElement("div");
@@ -199,7 +199,10 @@ placeOrderBtn.addEventListener("click", () => {
                 <input type="text" id="kortdatum" name="kortdatum" placeholder="MM/ÅÅ" required><br><br>
                 <label for="cvc">CVC:</label><br>
                 <input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
-                <button type="submit">Betala nu</button>
+                <div class="button-container">
+                    <button type="submit" id="payNow">Betala nu</button>
+                    <button type="button" id="goBack">Tillbaka</button>
+                </div>
             </form>
         </div>
     `;
@@ -209,11 +212,18 @@ placeOrderBtn.addEventListener("click", () => {
     // Visa betalning popup
     paymentPopup.style.display = "block";
 
-    // Hantera stängning av betalnings-popup
+    // Hantera stängning av betalnings popup
     const closePaymentPopup = document.getElementById("closePaymentPopup");
     closePaymentPopup.addEventListener("click", () => {
         paymentPopup.style.display = "none";
         document.body.removeChild(paymentPopup); // Ta bort popupen från DOM
+    });
+
+    // Hantera Tillbaka knappen
+    const goBackButton = document.getElementById("goBack");
+    goBackButton.addEventListener("click", () => {
+        paymentPopup.style.display = "none";
+        document.body.removeChild(paymentPopup); // Stäng popupen
     });
 
     // Dölj betalning popup om användaren klickar utanför innehållet
@@ -224,5 +234,3 @@ placeOrderBtn.addEventListener("click", () => {
         }
     });
 });
-
-
