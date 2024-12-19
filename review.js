@@ -33,8 +33,7 @@ document.getElementById("submitBtn").addEventListener("click", function() {
     // skapar och lägg till listobjekt för varje fält
     let ul = document.createElement("ul");
     ul.innerHTML = `
-        <li>${firstName}</li>
-        <li>${lastName}</li>
+        <li class="names">${firstName} ${lastName}</li>
         <li>Vad åt du? ${foodName}</li>
         <li>${desc}</li>
         <li>${createStars(selectedStars)}</li>
