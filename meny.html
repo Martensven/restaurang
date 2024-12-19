@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taverna</title>
     <link rel="stylesheet" href="style.css">
+    <script src="db.js" defer></script>
+    <script src="featuredfood.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -68,15 +71,11 @@
                 <label for="tableNumber">Skriv in ditt bordsnummer: </label>
                 <input type="number" name="Bordsnummer" min="1" max="30" id="tableNumber" value="10">
             </section>
-            <aside class="buttonStyling"> 
-                <button id="hideBtn">Fortsätt beställa</button> <input type="submit" value="Lägg beställning" id="placeOrder">
+            <aside class="buttonStyling">
+                <button id="hideBtn">Fortsätt beställa</button> <input type="submit" value="Lägg beställning"
+                    id="placeOrder">
             </aside>
         </section>
-
-        <article>
-            <h3>Totalsumma: ... <button id="betala-knapp">Betala</button> </h3>
-        </article>
-
 
         <div id="betal-popup" class="popup">
             <div class="popup-content">
@@ -97,8 +96,8 @@
         </div>
 
 
-        <script src="script.js" type="module"></script>
-        <script src="featuredfood.js" type="module"></script>
+        <script src="script.js" defer></script>
+        <script src="featuredfood.js" defer></script>
 </body>
 
 </html>
