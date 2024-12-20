@@ -1,27 +1,28 @@
 /* Popup rutan för information */
-window.onload = function () {
-    console.log("Sidan har laddats!");
-    const infoPopUp = document.getElementById('infopopup');
-    infoPopUp.style.display = 'flex';
+window.onload = function () { //När fönstret laddas så skapar vi en funktion
+    console.log("Sidan har laddats!"); //Vi consol-loggar att sidan har laddat klart
+    const infoPopUp = document.getElementById('infopopup'); //Vi skapar en variabel som tar värdet från element med id infopopup
+    infoPopUp.style.display = 'flex'; //Vi sätter elementets display-egenskap till flex så att elementet blir synligt
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    var closeButton = document.getElementById('Jagfortstorbutton');
+document.addEventListener("DOMContentLoaded", function () { //Vi sätter en eventlistener på dokumentet som väntar på att dokumentet ska laddas klart
+    var closeButton = document.getElementById('Jagfortstorbutton'); //Vi skapar en variabel som tar värdet från element med id Jagfortstorbutton
 
-    closeButton.addEventListener('click', function () {
-        console.log("Knappen klickades!");  // Testa om klicket registreras
-        document.getElementById('infopopup').style.display = 'none';
+    closeButton.addEventListener('click', function () { //Vi använder variabeln för att lägga till en eventlistener på knappen som aktiveras när man klickar på den och skapar en funktion
+        console.log("Knappen klickades!");  //Vi consol-loggar att knappen klickades
+        document.getElementById('infopopup').style.display = 'none'; //Vi sätter elementets display-egenskap till none så att elementet blir osynligt
     })
 });
 
-console.log(dbd);
+console.log(dbd); //Vi consolloggar ut objektet som innehåller alla maträtter för att enklare kunna navigera i denna
 
-function populateMenu(data, menuElementId) {
-    const menuElement = document.getElementById(menuElementId);
-    Object.values(data).forEach(dish => {
-        const aside = document.createElement("aside");
-        aside.className = "dish";
-        aside.innerHTML = `
+function populateMenu(data, menuElementId) { //vi skapar en funktion för att skapa en meny med flera element
+    const menuElement = document.getElementById(menuElementId); //Skapar en variabel med värde från menuElementId
+    Object.values(data).forEach(dish => { //Vi omvandlar objektet till en array och hämtar datan. För varje item(dish) i arrayen så kör vi en iteration 
+        const aside = document.createElement("aside"); //Vi skapar ett element med aside-tag
+        aside.className = "dish"; //Vi sätter klassnamn till dish
+        //Nedan skapar vi elementen som ska ligga i vår aside, vi hämtar även data från respektive fält i arrayen för att populera elementen
+        aside.innerHTML = ` 
             <img src="${dish.img}" alt="${dish.name}">
             <section class="dishText">
                 <h2>${dish.name}</h2>
@@ -30,53 +31,53 @@ function populateMenu(data, menuElementId) {
                 <button class="itemBtn" id="${dish.id}" value="${dish.name}, pris: ${dish.price} kr">Lägg till</button>
             </section>
         `;
-        menuElement.appendChild(aside);
+        menuElement.appendChild(aside); //Vi använder append så att elementen läggs till i dokumentet
     });
 }
 
-// Använd funktionen för att skapa alla menyer:
+//Vi använder funktionen populateMenu på ett sätt för varje kategori av rätter som vi använder. Där dbd.bbqs till exempel motsvarar data och "bbqMenu" motsvarar menuElementId
 populateMenu(dbd.bbqs, "bbqMenu");
 populateMenu(dbd.burgers, "burgerMenu");
 populateMenu(dbd.drinks, "drinkMenu");
 populateMenu(dbd.desserts, "dessertMenu");
 
-let orderList = []; //Array för beställningar
+let orderList = []; //Vi skapar en array som vi sedan lägger till maträtter i
 
 // Funktion för att hantera knapptryck och lägga till i orderlistan
-document.addEventListener("click", (event) => {
-    if (event.target && event.target.classList.contains("itemBtn")) {
-        const [name, priceInfo] = event.target.value.split(", pris: ");
-        const price = parseFloat(priceInfo.replace(" kr", "")); // Omvandla pris till ett nummer
+document.addEventListener("click", (event) => { //Vi lägger till en eventlistener som väntar på ett klickevent
+    if (event.target.classList.contains("itemBtn")) { //Om knappen som klickas har klassen "itemBtn"
+        const [name, priceInfo] = event.target.value.split(", pris: "); //Då delar vi upp namn och pris till olika variabler
+        const price = parseFloat(priceInfo.replace(" kr", "")); //Vi omvandlar pris till ett nummer
 
         // Kontrollera om objektet redan finns i beställningen
-        const existingItem = orderList.find(item => item.name === name);
+        const existingItem = orderList.find(item => item.name === name); //Vi skapar en variabel som tar värdet från listan och kontrollerar om ett item redan finns i listan, genom att jämföra namn på det som läggs till och det som redan finns
 
-        if (existingItem) {
-            existingItem.quantity += 1; // Öka kvantiteten om den redan finns
-        } else {
-            orderList.push({ name, price, quantity: 1 }); // Lägg till ny vara
+        if (existingItem) { //Om variabeln existingItem uppfylls 
+            existingItem.quantity += 1; // Öka kvantiteten med 1
+        } else { //annars
+            orderList.push({ name, price, quantity: 1 }); //Lägger vi till nytt item i listan
         }
 
-        updateOrderSummary(); // Uppdatera sammanfattningen av beställningen
+        updateOrderSummary(); //Vi kör funktionen 
     }
 });
 
 
 // Funktion för att uppdatera orderöversikten
 
-function updateOrderSummary() {
-    const orderSummary = document.getElementById("orderSummary");
-    orderSummary.innerHTML = ""; // Töm orderöversikten innan den fylls på nytt
+function updateOrderSummary() { //Vi skapar en funktion
+    const orderSummary = document.getElementById("orderSummary"); //Vi skapar en variabel med värdet från orderSummary
+    orderSummary.innerHTML = ""; //Vi tömmer listan så att vi kan fylla på den på nytt
 
-    let totalPrice = 0;
+    let totalPrice = 0; //Vi sätter det totala priset till 0
 
-    orderList.forEach((item, index) => { // Lägg till index för att hitta rätt element
-        const itemTotal = item.quantity * item.price;
-        totalPrice += itemTotal;
+    orderList.forEach((item, index) => { //Vi skapar en forEach loop som kör en gång per item i listan. Vi ser även till att hålla koll på index
+        const itemTotal = item.quantity * item.price; //Vi skapar en variabel som räknar ut priset på en maträtt multiplicerat med kvantiteten av maträtten 
+        totalPrice += itemTotal; //Vi adderar varje maträtts totalpris till beställningens totalpris
 
-        // Skapa en listpunkt för varje vara
-        const li = document.createElement("li");
-        li.classList = 'liOrderList'
+        const li = document.createElement("li"); //Vi skapar ett listelement (per iteration)
+        li.classList = 'liOrderList'; //Varje li-element får samma klass
+        //Nedan skapar vi elementen som ska ligga i vår li, vi hämtar även data från respektive fält i arrayen för att populera elementen
         li.innerHTML = `
             <section class="namePrice">
             ${item.name} ${itemTotal.toFixed(2)} kr
@@ -88,56 +89,56 @@ function updateOrderSummary() {
             </section>
             `;
 
-        const removeBtn = document.createElement("button");
-        removeBtn.classList = 'removeBtn';
-        removeBtn.innerHTML = `<strong>X</strong>`
-        removeBtn.dataset.index = index; // Spara index som data-attribute
-        removeBtn.addEventListener("click", () => {
+        const removeBtn = document.createElement("button"); //Vi skapar en knapp
+        removeBtn.classList = 'removeBtn'; //Knappen får en klass
+        removeBtn.innerHTML = `<strong>X</strong>` //Ett X ligger mitt i rutan
+        removeBtn.dataset.index = index; //Vi sparar index som data-attribute
+        removeBtn.addEventListener("click", () => { //Vi lägger till en evenlistener som väntar på ett klick som kör nedan funktion
             removeItem(index); // Kör funktionen removeItem när knappen klickas
         });
 
-        li.appendChild(removeBtn); // Lägg till "Ta bort"-knappen i listpunkten
-        orderSummary.appendChild(li); // Lägg till listpunkten i översikten
+        li.appendChild(removeBtn); //Vi lägger till knappen i li-elementet
+        orderSummary.appendChild(li); //Vi lägger till själva li-elementet i listan
     });
 
 
-    const showBtn = document.getElementById("showBtn");
+    const showBtn = document.getElementById("showBtn"); //Vi skapar en variabel som tar värdet från showBtn, denna ligger med display: none;
 
-    if (orderSummary.getElementsByTagName("li").length > 0) {
-        showBtn.style.display = 'flex'; // Visa knappen om det finns li-element
-    } else {
-        showBtn.style.display = 'none'; // Dölja knappen om det inte finns li-element
+    if (orderSummary.getElementsByTagName("li").length > 0) { //Om vår ul är längre än 0
+        showBtn.style.display = 'flex'; //Vi sätter elementets display-egenskap till flex så att elementet blir synligt
+    } else { //Annars 
+        showBtn.style.display = 'none'; //Vi sätter elementets display-egenskap till none så att elementet blir osynligt
     }
-    
+
     // Lägg till totala priset
-    const totalP = document.createElement("p");
-    totalP.classList = 'kundVagn';
-    totalP.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`;
-    orderSummary.appendChild(totalP);
+    const totalP = document.createElement("p"); //Vi skapar ett p-element
+    totalP.classList = 'kundVagn'; //Vi lägger till en klass
+    totalP.textContent = `Totalt: ${totalPrice.toFixed(2)} kr`; //Vi populerar elementet med ny text där vi skriver ut totalpriset
+    orderSummary.appendChild(totalP); //Vi lägger till elementet
 
     // Funktion för att ta bort en vara från orderlistan
-function removeItem(index) {
-    orderList.splice(index, 1); // Ta bort objektet från arrayen
-    updateOrderSummary(); // Uppdatera översikten
-}
-
-    // Funktion för att ta bort en vara från orderlistan
-function lessItem(index) {
-    const item = orderList[index];
-    
-    if (item.quantity > 1) {
-        item.quantity -= 1; // Minska kvantiteten med 1
-    } else {
-        item.quantity == 1;
+    function removeItem(index) {
+        orderList.splice(index, 1); // Ta bort objektet från arrayen
+        updateOrderSummary(); // Uppdatera översikten
     }
-    
-    updateOrderSummary(); // Uppdatera översikten
-}
 
-function addQuantity (index) {
-    const item = orderList[index];
-    item.quantity += 1;
-}
+    // Funktion för att ta bort en vara från orderlistan
+    function lessItem(index) {
+        const item = orderList[index];
+
+        if (item.quantity > 1) {
+            item.quantity -= 1; // Minska kvantiteten med 1
+        } else {
+            item.quantity == 1;
+        }
+
+        updateOrderSummary(); // Uppdatera översikten
+    }
+
+    function addQuantity(index) {
+        const item = orderList[index];
+        item.quantity += 1;
+    }
 
     // Lägg till event listeners för "+" och "-" knappar
     document.querySelectorAll(".quantityUp").forEach(button => {
