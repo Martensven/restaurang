@@ -123,7 +123,7 @@ function removeItem(index) {
 
     // Funktion för att ta bort en vara från orderlistan
 function lessItem(index) {
-    const item = orderList[index];
+    const item = orderList[index]; // Vi hämtar varan från listan baserat på index
     
     if (item.quantity > 1) {
         item.quantity -= 1; // Minska kvantiteten med 1
@@ -134,8 +134,9 @@ function lessItem(index) {
     updateOrderSummary(); // Uppdatera översikten
 }
 
+//funktion för att öka kvantitet av en vara
 function addQuantity (index) {
-    const item = orderList[index];
+    const item = orderList[index]; // Vi hämtar varan från listan baserat på index
     item.quantity += 1;
 }
 
@@ -144,7 +145,7 @@ function addQuantity (index) {
         button.addEventListener("click", () => {
             const index = parseInt(button.dataset.index, 10); // Få index från data-attribute
             addQuantity(index); // Öka kvantiteten
-            updateOrderSummary(); // Uppdatera översikten
+            updateOrderSummary(); // Uppdatera översikten efter ändring
         });
     });
 
@@ -156,44 +157,50 @@ function addQuantity (index) {
     });
 }
 
+// Funktion för att visa orderlist
 function showOrder() {
-    const sidebar = document.querySelector('#orderList');
-    sidebar.style.display = 'flex';
+    const sidebar = document.querySelector('#orderList'); //Vi hittar sidan där orderlistan ska visas
+    sidebar.style.display = 'flex'; // Vi använder display element flex för att visa orderlistan.
 }
 
+//Funktion för att dölja orderlistan
 function hideOrder() {
-    const sidebar = document.querySelector('#orderList');
-    sidebar.style.display = 'none';
+    const sidebar = document.querySelector('#orderList'); //Vi hittar sidan där orderlistan ska visas
+    sidebar.style.display = 'none'; // Vi använder displat element till none för att dölja orderlistan
 }
 
-const showOrderList = document.getElementById('showBtn')
+//knappar för att visa och dölja orderlistan
+const showOrderList = document.getElementById('showBtn') 
 const hideOrderList = document.getElementById('hideBtn')
 
+//Vi la till event listeners för hantering gällande visning och döljning av orderlistan
 showOrderList.addEventListener('click', showOrder)
 hideOrderList.addEventListener('click', hideOrder)
 
 // Visa Se beställning popupen
 showBtn.addEventListener("click", () => {
-    orderList.style.display = "flex"; // Visa beställningslistan
+    orderList.style.display = "flex"; // Vi ändrar display element till flex för att visa popupen
 });
 
 // Döljer Se beställning popupen
 hideBtn.addEventListener("click", () => {
-    orderList.style.display = "none"; // Döljer beställningslistan
+    orderList.style.display = "none"; // Döljer beställningslistan med display element none
 });
 
 //betalning popup
-let paymentPopup;
+let paymentPopup; //Variabel som hanterar popup fönstret
 
-const placeOrderBtn = document.getElementById("placeOrder");
+const placeOrderBtn = document.getElementById("placeOrder"); //hämta knapp för lägg beställning
 
 // Visa betalning popup när Lägg beställning klickas
 placeOrderBtn.addEventListener("click", () => {
     // Skapa betalning popup
-    paymentPopup = document.createElement("div");
-    paymentPopup.id = "paymentPopup";
+    paymentPopup = document.createElement("div"); //Vi skapande en div för popup
+    paymentPopup.id = "paymentPopup"; //Vi gav en ID för att kunna identifiera popupen
+    
+    // Vi gav den innehållet för själva popupen som HTML
     paymentPopup.innerHTML = `
-        <div class="popup-content">
+         <div class="popup-content">
             <span id="closePaymentPopup" class="stang-popup">&times;</span>
             <h2>Betalningsinformation</h2>
             <p>Vänligen fyll i din betalningsinformation nedan:</p>
@@ -211,7 +218,7 @@ placeOrderBtn.addEventListener("click", () => {
             </form>
         </div>
     `;
-    paymentPopup.className = "popup";
+    paymentPopup.className = "popup"; // Vi tilldela en klass för styling
     document.body.appendChild(paymentPopup);
 
     // Visa betalning popup
@@ -220,20 +227,20 @@ placeOrderBtn.addEventListener("click", () => {
     // Hantera stängning av betalnings popup
     const closePaymentPopup = document.getElementById("closePaymentPopup");
     closePaymentPopup.addEventListener("click", () => {
-        paymentPopup.style.display = "none";
-        document.body.removeChild(paymentPopup); // Ta bort popupen från DOM
+        paymentPopup.style.display = "none"; //döljer popupen
+        document.body.removeChild(paymentPopup); // Tar bort popupen från DOM
     });
 
     // Hantera Tillbaka knappen
     const goBackButton = document.getElementById("goBack");
     goBackButton.addEventListener("click", () => {
-        paymentPopup.style.display = "none";
+        paymentPopup.style.display = "none"; //döljer popupen
         document.body.removeChild(paymentPopup); // Stäng popupen
     });
 
-    // Dölj betalning popup om användaren klickar utanför innehållet
+    // Döljer betalning popupen om besökaren klickar utanför innehållet
     paymentPopup.addEventListener("click", (event) => {
-        if (event.target === paymentPopup) {
+        if (event.target === paymentPopup) { //Kollar ifall besökaren klickar utanför popupen
             paymentPopup.style.display = "none";
             document.body.removeChild(paymentPopup);
         }
