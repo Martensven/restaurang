@@ -1,25 +1,27 @@
 // Hämta alla stjärn element
 let stars = document.querySelectorAll(".stars span");
-let selectedStars = 0; 
+let selectedStars = 0; //variabel för att lagra antalet stjärnor
 
-
+//funktion för att välja stjärnor
 function gfg(n) {
     remove(); //tar bort tidigare val av stjärnor
     selectedStars = n; // Uppdaterar antalet valda stjärnor
+    // klass för valda stjärnor
     for (let i = 0; i < n; i++) {
-        stars[i].classList.add("selected"); // klass för valda stjärnor
+        stars[i].classList.add("selected"); 
     }
 }
 
 //funktion för att ta bort valda stjänor
 function remove() {
+    //återställer till sin ursprunliga klass
     stars.forEach(star => {
-       star.className = "star"; //återställer till sin ursprunliga klass
+       star.className = "star"; 
     });
 }
 
 
-document.getElementById("submitBtn").addEventListener("click", function() {
+document.getElementById("submitBtn").addEventListener("click", function() {//lägger till eventlistener för submit knappen
     // Hämta värden från textfälten
     let firstName = document.querySelector('input[name="firstName"]').value;
     let lastName = document.querySelector('input[name="lastName"]').value;
@@ -53,13 +55,17 @@ document.getElementById("submitBtn").addEventListener("click", function() {
 
   // Skapar en HTML-sträng med stjärnbetyg baserat på antalet valda stjärnor.
 function createStars(n) {
-    let starsHTML = "<span class='review-stars'>";
+    let starsHTML = "<span class='review-stars'>"; //starta html string med span för stjärnbetyg
     for (let i = 0; i < n; i++) {
+        //lägg till stjänor som är valda
         starsHTML += "★"; 
     }
     for (let i = n; i < 5; i++) {
+       // lägger till ej valda stjärnor
         starsHTML += "☆"; 
     }
+    //stänger span tagg
     starsHTML += "</span>";
+    //returnera html string med star review
     return starsHTML; 
 }
