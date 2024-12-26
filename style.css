@@ -81,7 +81,8 @@ h1 {
 
 .dish {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 
@@ -90,7 +91,7 @@ h1 {
     height: 150px;
     margin-right: 1%;
     border-radius: 10px;
-    align-self: center;
+    margin-right: 5vw;
 }
 
 .dishText {
@@ -99,8 +100,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0;
-    margin: 0;
+    width: 60%;
 }
 
 ul {
