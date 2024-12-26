@@ -131,7 +131,7 @@ function lessItem(index) {
         item.quantity -= 1; // Minska kvantiteten med 1
     } else {
         item.quantity == 1;
-
+    }
 //funktion för att öka kvantitet av en vara
 function addQuantity (index) {
     const item = orderList[index]; // Vi hämtar varan från listan baserat på index
@@ -243,3 +243,4 @@ placeOrderBtn.addEventListener("click", () => {
         }
     });
 });
+}};
