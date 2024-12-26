@@ -101,7 +101,7 @@ function updateOrderSummary() { //Vi skapar en funktion
         orderSummary.appendChild(li); //Vi lägger till själva li-elementet i listan
     });
 
-
+}
     const showBtn = document.getElementById("showBtn"); //Vi skapar en variabel som tar värdet från showBtn, denna ligger med display: none;
 
     if (orderSummary.getElementsByTagName("li").length > 0) { //Om vår ul är längre än 0
@@ -132,6 +132,7 @@ function lessItem(index) {
     } else {
         item.quantity == 1;
     }
+};
 //funktion för att öka kvantitet av en vara
 function addQuantity (index) {
     const item = orderList[index]; // Vi hämtar varan från listan baserat på index
@@ -243,4 +244,4 @@ placeOrderBtn.addEventListener("click", () => {
         }
     });
 });
-}};
+
